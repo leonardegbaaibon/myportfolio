@@ -9,8 +9,10 @@ import Mogroup from "./assets/Image/Mogroup.png"
 import { ReactSVG } from "react-svg";
 import Designer from "./assets/Image/Designer.png"
 import Developer from "./assets/Image/Developer.png";
-import { IoLogoGithub } from "react-icons/io";
+import { IoLogoGithub, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io";
 import { projectsData } from "./Utils/data";
+import { IoLogoMedium, IoLogoTwitch, IoLogoTwitter } from "react-icons/io5";
+// import { IoLogoMedium } from "react-icons/io5";
 
 // import { a } from "framer-motion/client";
 
@@ -232,15 +234,12 @@ function App() {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="  h-[80vh] md:h-[100vh] relative"
+              className="  h-[80vh] relative"
             >
-              <spline-viewer url="https://prod.spline.design/L7aiMCz9M-dZNGgu/scene.splinecode" className="w-[100vh] lg:h-[120vh]"
+              <spline-viewer url="https://prod.spline.design/L7aiMCz9M-dZNGgu/scene.splinecode" className="w-[100vh]"
               ></spline-viewer>
               <div class="absolute bottom-2 right-2 bg-black w-[200px] h-[50px] z-10"></div>
             </motion.div>
-{/* <spline-viewer url="https://prod.spline.design/L7aiMCz9M-dZNGgu/scene.splinecode"></spline-viewer> */}
-      
-
       <section className="flex flex-wrap items-center gap-4 my-24 justify-evenly">
       {projectsData.map((project, index) => (
         <div
@@ -248,14 +247,14 @@ function App() {
           className="border border-zinc-700 hover:border-zinc-500 duration-100 ease-in-out m-2 p-2 rounded-md min-w-[275px] md:max-[275px]"
         >
           <p className="text-lg font-medium text-white uppercase">
-            {project.name}
+            {(project.name).length > 24 ? (project.name).slice(0,24) + '...' : project.name}
           </p>
 
           <img
             src={project.imagePath}
-            className="object-cover my-4 rounded-md"
+            className="my-4 rounded-md h-[22vh]"
             width={300}
-            // height={300}
+            // height={400}
             alt={`${project.name} preview`}
           />
 
@@ -263,7 +262,7 @@ function App() {
             <p className="text-lg text-gray-300 text-start">
               Technologies
               <span className="block text-sm text-gray-500">
-                {project.technologies.join(", ")}
+                {project.technologies.length > 4 ? project.technologies.slice(0, 4).join(", ") + ", ..." : project.technologies.join(", ")}
               </span>
             </p>
             <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
@@ -274,6 +273,35 @@ function App() {
           </div>
         </div>
       ))}
+    </section>
+
+    <section className="flex flex-col items-center justify-center w-full my-24">
+      <p className="my-10 text-2xl text-white capitalize to-gray-400">
+        Follow me on
+      </p>
+      <div className="flex flex-wrap items-center justify-center w-full gap-4 my-4">
+        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+          <IoLogoGithub className="text-3xl text-white cursor-pointer" />
+          <p className="text-lg text-white">Github</p>
+        </a>
+        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+          <IoLogoLinkedin className="text-3xl text-blue-800 cursor-pointer" />
+          <p className="text-lg text-white">Linkedin</p>
+        </a>
+        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+          <IoLogoMedium className="text-3xl text-white cursor-pointer" />
+          <p className="text-lg text-white">Medium</p>
+        </a>
+        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+          <IoLogoTwitter className="text-3xl text-blue-400 cursor-pointer" />
+          <p className="text-lg text-white">Twitter</p>
+        </a>
+        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+          <IoLogoYoutube className="text-3xl text-red-500 cursor-pointer" />
+          <p className="text-lg text-white">Youtube</p>
+        </a>
+        
+      </div>
     </section>
     </div>
   );
