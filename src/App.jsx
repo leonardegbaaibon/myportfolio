@@ -3,15 +3,16 @@ import { motion } from "framer-motion";
 import "./App.css";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import SpacepayLab from "./assets/Image/spacepaylab.png"
-import Gumshoe from "./assets/Image/gumshoe.png"
-import Mogroup from "./assets/Image/Mogroup.png"
+import SpacepayLab from "../public/Image/spacepaylab.png"
+import Gumshoe from "../public/Image/gumshoe.png"
+import Mogroup from "../public/Image/Mogroup.png"
 import { ReactSVG } from "react-svg";
-import Designer from "./assets/Image/Designer.png"
-import Developer from "./assets/Image/Developer.png";
+import Designer from "../public/Image/Designer.png"
+import Developer from "../public/Image/Developer.png";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io";
 import { boxes, projectsData } from "./Utils/data";
 import { IoLogoMedium, IoLogoTwitch, IoLogoTwitter } from "react-icons/io5";
+
 
 function App() {
   useEffect(() => {
@@ -21,7 +22,7 @@ function App() {
     script.src = "https://unpkg.com/@splinetool/viewer@1.9.44/build/spline-viewer.js";
     document.body.appendChild(script);
 
-    // Cleanup script on component unmount
+
     return () => {
       document.body.removeChild(script);
     };
@@ -320,7 +321,7 @@ function App() {
     {boxes.map((box, index) => (
       <div
         key={`duplicate-${index}`}
-        className="w-[300px] h-[150px] md:w-[500px] md:h-[300px] mx-2 bg-black border border-zinc-700 text-white rounded-lg flex flex-col items-center justify-between text-xl font-bold shadow-lg relative"
+        className="w-[300px] h-[200px] md:w-[500px] md:h-[300px] mx-2 bg-black border border-zinc-700 text-white rounded-lg flex flex-col items-center justify-between text-xl font-bold shadow-lg relative"
       >
         <div className="p-4 text-center">
         <i className="text-[15px] text-pretty">" {box.text} "</i>
