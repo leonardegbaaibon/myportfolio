@@ -67,7 +67,7 @@ function App() {
               <p className="mt-4 text-start text-[16px] md:text-2xl text-fuchsia-200">
                 Frontend Engineer | Native Mobile Developer | Product Designer </p>
               <p className="mt-4 text-start text-[15px] md:text-[20px] text-fuchsia-100">
-                I'm a passionate Frontend Engineer with experience building web, mobile, and desktop applications. Skilled in React, Kotlin (Android), React Native, and UI/UX design (Figma, Spline), I focus on delivering intuitive, high-performance products. Currently learning advanced Kotlin for native mobile development and expanding my design expertise.
+                I'm a passionate Frontend Engineer with experience building web, mobile, and desktop applications. Skilled in React, Kotlin (Android), React Native, and UI/UX design (Figma, Spline).
               </p>
             </div>
           </div>
