@@ -46,18 +46,6 @@ export const projectsData = [
       image: "/Image/Opedev.jpg",
       linkedin: "https://www.linkedin.com/in/opeyemi-abiodun-aa327920a/?originalSubdomain=ng",
     },
-    // {
-    //   text: "A visionary designer with a strong command of Kotlin, delivering intuitive and visually striking applications.",
-    //   recommendation: "Person 3",
-    //   image: "https://via.placeholder.com/40?text=Pic3",
-    //   linkedin: "https://www.linkedin.com/in/person3",
-    // },
-    // {
-    //   text: "Expert in native code development, crafting seamless and high-performing mobile experiences.",
-    //   recommendation: "Person 4",
-    //   image: "https://via.placeholder.com/40?text=Pic4",
-    //   linkedin: "https://www.linkedin.com/in/person4",
-    // },
     {
       text: "A visionary designer with a strong command of Kotlin, delivering intuitive and visually striking applications.",
       recommendation: "Oluwafemi Ogunnote",

@@ -6,7 +6,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import SpacepayLab from "../public/Image/spacepaylab.png"
 import Gumshoe from "../public/Image/gumshoe.png"
 import Mogroup from "../public/Image/Mogroup.png"
-import { ReactSVG } from "react-svg";
+// import { ReactSVG } from "react-svg";
 import Designer from "../public/Image/Designer.png"
 import Developer from "../public/Image/Developer.png";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io";
