@@ -353,24 +353,24 @@ function App() {
       <p className="my-10 text-2xl text-white capitalize to-gray-400">
         Follow me on
       </p>
-      <div className="flex flex-wrap items-center justify-center w-full gap-4 my-4">
-        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+      <div className="flex flex-wrap items-center justify-center w-full gap-4 mx-5 my-4">
+        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 mx-6 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
           <IoLogoGithub className="text-3xl text-white cursor-pointer" />
           <p className="text-lg text-white">Github</p>
         </a>
-        <a href="https://www.linkedin.com/in/leonard-egbaaibon/" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+        <a href="https://www.linkedin.com/in/leonard-egbaaibon/" className="flex items-center justify-center w-full gap-3 px-3 py-5 mx-6 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
           <IoLogoLinkedin className="text-3xl text-blue-800 cursor-pointer" />
           <p className="text-lg text-white">Linkedin</p>
         </a>
-        <a href="https://medium.com/@legbaaibon" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+        <a href="https://medium.com/@legbaaibon" className="flex items-center justify-center w-full gap-3 px-3 py-5 mx-6 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
           <IoLogoMedium className="text-3xl text-white cursor-pointer" />
           <p className="text-lg text-white">Medium</p>
         </a>
-        <a href="https://x.com/Realcod3r" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+        <a href="https://x.com/Realcod3r" className="flex items-center justify-center w-full gap-3 px-3 py-5 mx-6 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
           <IoLogoTwitter className="text-3xl text-blue-400 cursor-pointer" />
           <p className="text-lg text-white">Twitter</p>
         </a>
-        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 mx-6 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
           <IoLogoYoutube className="text-3xl text-red-500 cursor-pointer" />
           <p className="text-lg text-white">Youtube</p>
         </a>

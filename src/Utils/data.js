@@ -1,36 +1,33 @@
-
-
-
 export const projectsData = [
     {
       name: "Portfolio Website",
       imagePath: "/Image/Developer.png",
-      technologies: ["React", "Tailwind CSS", "JavaScript"],
+      technologies: ["React","Vite", "Tailwind CSS", "JavaScript"],
       githubLink: "https://github.com/yourusername/portfolio-website",
     },
     {
       name: "Proptibaank",
       imagePath: "/Image/proptibaank.png",
-      technologies: ["Node.js", "Express", "MongoDB", "React","React Native","Redux","Expo"],
-      githubLink: "https://github.com/yourusername/ecommerce-store",
+      technologies: ["MongoDB", "React","React Native","Redux","Expo"],
+      githubLink: "https://github.com/Mogrouporg",
     },
     {
       name: "Payment Application",
       imagePath: "/Image/spacepaylab2.png",
-      technologies: ["Socket.IO", "Node.js", "React"],
-      githubLink: "https://github.com/yourusername/chat-application",
+      technologies: ["Expo","Rddux", "React","Vite","Tailwind","Typescript"],
+      githubLink: "https://github.com/Spacepaylabs",
     },
     {
       name: "Loveletter (telematics Software)",
       imagePath: "/Image/loveletter.png",
-      technologies: ["Vue.js", "Firebase", "Vuetify"],
-      githubLink: "https://github.com/yourusername/task-manager",
+      technologies: ["Javascript", "Mock.io", "React",],
+      githubLink: "https://github.com/leonardegbaaibon/SubrogateSoftware",
     },
     {
       name: "Gumshoe (Telematics Software)",
       imagePath: "/Image/gumshoe.png",
-      technologies: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
-      githubLink: "https://github.com/yourusername/weather-app",
+      technologies: ["React Native", "Kotlin", "JAVA", "Native code","Redux"],
+      githubLink: "https://github.com/Tsaron-Tech",
     },
   ];
 
