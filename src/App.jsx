@@ -10,12 +10,8 @@ import { ReactSVG } from "react-svg";
 import Designer from "./assets/Image/Designer.png"
 import Developer from "./assets/Image/Developer.png";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io";
-import { projectsData } from "./Utils/data";
+import { boxes, projectsData } from "./Utils/data";
 import { IoLogoMedium, IoLogoTwitch, IoLogoTwitter } from "react-icons/io5";
-// import { IoLogoMedium } from "react-icons/io5";
-
-// import { a } from "framer-motion/client";
-
 
 function App() {
   useEffect(() => {
@@ -56,20 +52,21 @@ function App() {
           transition={{ duration: 0.5 }}
         >
           {/* Text Section */}
-          <div className="w-screen h-[50vh] md:h-[120vh] relative mt-8 md:mt-24 md:mt-0">
+          <div className="w-screen h-[70vh] md:h-[120vh] relative mt-8 md:mt-24 md:mt-0">
             <spline-viewer
               url="https://prod.spline.design/yCeW7w4VEu5eoC27/scene.splinecode"
               style={{
                 width: "100%",
-                // height: "120vh",
+                // height: "70vh",
               }}
+              className="h-[150vh]"
             ></spline-viewer>
             <div class="absolute bottom-2 right-2 bg-black w-[200px] h-[50px] z-10"></div>
-            <div class="absolute top-36 md:top-48 left-8 md:left-20 md:w-[100vh] h-[30vh] z-10">
+            <div class="absolute top-36 md:top-48 left-5 md:left-20 md:w-[100vh] w-[50vh] h-[30vh] z-10">
               <h1 className="text-xl font-bold text-start md:text-4xl text-fuchsia-600" style={{ fontFamily: '"Lexend Tera", sans-serif;' }}>Hi, I am Leonard Egbaaibon 👨‍💻</h1>
-              <p className="mt-4 text-start text-[11px] md:text-2xl text-fuchsia-200">
+              <p className="mt-4 text-start text-[16px] md:text-2xl text-fuchsia-200">
                 Frontend Engineer | Native Mobile Developer | Product Designer </p>
-              <p className="mt-4 text-start text-[11px] md:text-[18px] mt-20 text-fuchsia-100">
+              <p className="mt-4 text-start text-[15px] md:text-[20px] text-fuchsia-100">
                 I'm a passionate Frontend Engineer with experience building web, mobile, and desktop applications. Skilled in React, Kotlin (Android), React Native, and UI/UX design (Figma, Spline), I focus on delivering intuitive, high-performance products. Currently learning advanced Kotlin for native mobile development and expanding my design expertise.
               </p>
             </div>
@@ -77,7 +74,7 @@ function App() {
         </motion.div>
       </div>
 
-      <div className="flex flex-col items-center justify-center min-h-screen text-white">
+      <div className="flex flex-col items-center justify-center min-h-screen my-20 text-white">
         <motion.div
           className="flex flex-col items-center justify-between w-full bg-black shadow-2xl rounded-xl md:p-8 lg:flex-row"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -275,6 +272,82 @@ function App() {
       ))}
     </section>
 
+    
+    <p className="top-0 my-10 text-2xl text-white capitalize to-gray-400">
+        Recommendations
+    </p>
+
+      <section className="relative flex items-center w-full h-full overflow-hidden bg-black">
+  <motion.div
+    className="flex w-max"
+    animate={{ x: ["0%", "-100%"] }}
+    transition={{
+      repeat: Infinity,
+      duration: 240, // Adjust speed
+      ease: "linear",
+    }}
+  >
+    {/* Seamlessly repeating content */}
+    {boxes.map((box, index) => (
+      <div
+        key={index}
+        className="w-[300px] h-[200px] md:w-[500px] md:h-[300px] mx-2 bg-black border border-zinc-700 text-white rounded-lg flex flex-col items-center justify-between text-xl font-bold shadow-lg relative"
+      >
+        <div className="p-4 text-center">
+          <i className=" text-[11px] md:text-[15px] text-pretty">" {box.text} "</i>
+        </div>
+
+        {/* Bottom left content */}
+        <div className="absolute flex items-center space-x-2 bottom-4 left-4">
+          <img
+            src={box.image}
+            alt={box.recommendation}
+            className="w-10 h-10 rounded-full"
+          />
+          <a
+            href={box.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-gray-400 hover:text-white"
+          >
+            {box.recommendation}
+          </a>
+        </div>
+      </div>
+    ))}
+
+    {/* Duplicate only visually for seamless effect */}
+    {boxes.map((box, index) => (
+      <div
+        key={`duplicate-${index}`}
+        className="w-[300px] h-[150px] md:w-[500px] md:h-[300px] mx-2 bg-black border border-zinc-700 text-white rounded-lg flex flex-col items-center justify-between text-xl font-bold shadow-lg relative"
+      >
+        <div className="p-4 text-center">
+        <i className="text-[15px] text-pretty">" {box.text} "</i>
+        </div>
+
+        {/* Bottom left content */}
+        <div className="absolute flex items-center space-x-2 bottom-4 left-4">
+          <img
+            src={box.image}
+            alt={box.recommendation}
+            className="w-10 h-10 rounded-full"
+          />
+          <a
+            href={box.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-gray-400 hover:text-white"
+          >
+            {box.recommendation}
+          </a>
+        </div>
+      </div>
+    ))}
+  </motion.div>
+</section>
+    
+
     <section className="flex flex-col items-center justify-center w-full my-24">
       <p className="my-10 text-2xl text-white capitalize to-gray-400">
         Follow me on
@@ -284,15 +357,15 @@ function App() {
           <IoLogoGithub className="text-3xl text-white cursor-pointer" />
           <p className="text-lg text-white">Github</p>
         </a>
-        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+        <a href="https://www.linkedin.com/in/leonard-egbaaibon/" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
           <IoLogoLinkedin className="text-3xl text-blue-800 cursor-pointer" />
           <p className="text-lg text-white">Linkedin</p>
         </a>
-        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+        <a href="https://medium.com/@legbaaibon" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
           <IoLogoMedium className="text-3xl text-white cursor-pointer" />
           <p className="text-lg text-white">Medium</p>
         </a>
-        <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+        <a href="https://x.com/Realcod3r" className="flex items-center justify-center w-full gap-3 px-3 py-5 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
           <IoLogoTwitter className="text-3xl text-blue-400 cursor-pointer" />
           <p className="text-lg text-white">Twitter</p>
         </a>
@@ -300,7 +373,6 @@ function App() {
           <IoLogoYoutube className="text-3xl text-red-500 cursor-pointer" />
           <p className="text-lg text-white">Youtube</p>
         </a>
-        
       </div>
     </section>
     </div>
