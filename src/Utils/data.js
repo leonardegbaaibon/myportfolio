@@ -4,31 +4,31 @@
 export const projectsData = [
     {
       name: "Portfolio Website",
-      imagePath: "public/Image/Developer.png",
+      imagePath: "/Image/Developer.png",
       technologies: ["React", "Tailwind CSS", "JavaScript"],
       githubLink: "https://github.com/yourusername/portfolio-website",
     },
     {
       name: "Proptibaank",
-      imagePath: "public/Image/proptibaank.png",
+      imagePath: "/Image/proptibaank.png",
       technologies: ["Node.js", "Express", "MongoDB", "React","React Native","Redux","Expo"],
       githubLink: "https://github.com/yourusername/ecommerce-store",
     },
     {
       name: "Payment Application",
-      imagePath: "public/Image/spacepaylab2.png",
+      imagePath: "/Image/spacepaylab2.png",
       technologies: ["Socket.IO", "Node.js", "React"],
       githubLink: "https://github.com/yourusername/chat-application",
     },
     {
       name: "Loveletter (telematics Software)",
-      imagePath: "public/Image/loveletter.png",
+      imagePath: "/Image/loveletter.png",
       technologies: ["Vue.js", "Firebase", "Vuetify"],
       githubLink: "https://github.com/yourusername/task-manager",
     },
     {
       name: "Gumshoe (Telematics Software)",
-      imagePath: "public/Image/gumshoe.png",
+      imagePath: "/Image/gumshoe.png",
       technologies: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
       githubLink: "https://github.com/yourusername/weather-app",
     },
@@ -40,13 +40,13 @@ export const projectsData = [
     {
       text: "Kotlin maestro who transforms design concepts into reliable and scalable applications.",
       recommendation: "Elvis Udoh",
-      image: "public/Image/Elvis.jpg",
+      image: "/Image/Elvis.jpg",
       linkedin: "https://www.linkedin.com/in/elvis-udoh/",
     },
     {
       text: "A creative powerhouse in web app development, blending innovative design with robust functionality.",
       recommendation: "Opeyemi Abiodun",
-      image: "public/Image/Opedev.jpg",
+      image: "/Image/Opedev.jpg",
       linkedin: "https://www.linkedin.com/in/opeyemi-abiodun-aa327920a/?originalSubdomain=ng",
     },
     // {
@@ -64,37 +64,37 @@ export const projectsData = [
     {
       text: "A visionary designer with a strong command of Kotlin, delivering intuitive and visually striking applications.",
       recommendation: "Oluwafemi Ogunnote",
-      image: "public/Image/femi.jpg",
+      image: "/Image/femi.jpg",
       linkedin: "https://www.linkedin.com/in/oluwafemi-ogunnote-76207a151/",
     },
     {
       text: "Consistently delivers exceptional desktop applications with cutting-edge design and flawless execution.",
       recommendation: "Jimi Fasina",
-      image: "public/Image/Jimi.jpg",
+      image: "/Image/Jimi.jpg",
       linkedin: "https://www.linkedin.com/in/jimi-fasina-2b1b8a23/?originalSubdomain=ng",
     },
     {
       text: "A skilled problem solver who unites advanced coding techniques with stellar design aesthetics.",
       recommendation: "Udoh Emem",
-      image: "public/Image/Emem.jpg",
+      image: "/Image/Emem.jpg",
       linkedin: "https://www.linkedin.com/in/ememudoh/",
     },
     {
       text: "A web app specialist who ensures every application is both user-friendly and visually engaging.",
       recommendation: "Oyindamola Ogunnote",
-      image: "public/Image/Oyinda.jpg",
+      image: "/Image/Oyinda.jpg",
       linkedin: "https://www.linkedin.com/in/oyindamola-ogunnote/",
     },
     {
       text: "Exceptional at bringing ideas to life through thoughtful design and native code optimization.",
       recommendation: "Elizabeth Odunayo",
-      image: "public/Image/Elizabeth.jpg",
+      image: "/Image/Elizabeth.jpg",
       linkedin: "https://www.linkedin.com/in/elizabeth-egbaaibon/",
     },
     {
       text: "Demonstrates unparalleled proficiency in Kotlin, bridging modern design and high-quality code.",
       recommendation: "Christopher Egbaaibon",
-      image: "public/Image/Christopher.jpg",
+      image: "/Image/Christopher.jpg",
       linkedin: "https://www.linkedin.com/in/christopher-egbaaibon-02701120a/",
     },
   ];
