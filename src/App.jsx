@@ -496,7 +496,7 @@ function App() {
           Follow me on
         </p>
         <div className="flex flex-wrap items-center justify-center w-full gap-4 mx-5 my-4">
-          <a href="#" className="flex items-center justify-center w-full gap-3 px-3 py-5 mx-6 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
+          <a href="https://github.com/leonardegbaaibon" className="flex items-center justify-center w-full gap-3 px-3 py-5 mx-6 duration-100 ease-in-out border cursor-pointer md:w-auto md:px-8 border-zinc-800 rounded-2xl hover:border-zinc-600">
             <IoLogoGithub className="text-3xl text-white cursor-pointer" />
             <p className="text-lg text-white">Github</p>
           </a>
