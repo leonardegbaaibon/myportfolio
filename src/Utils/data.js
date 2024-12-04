@@ -3,7 +3,7 @@ export const projectsData = [
       name: "Portfolio Website",
       imagePath: "/Image/Developer.png",
       technologies: ["React","Vite", "Tailwind CSS", "JavaScript"],
-      githubLink: "https://github.com/yourusername/portfolio-website",
+      githubLink: "https://github.com/leonardegbaaibon/myportfolio",
     },
     {
       name: "Proptibaank",
