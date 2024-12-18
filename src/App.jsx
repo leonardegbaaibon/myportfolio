@@ -190,7 +190,7 @@ function App() {
           transition={{ duration: 0.5 }}
         >
           {/* Text Section */}
-          <div className="w-screen h-[70vh] md:h-[120vh] relative mt-8 md:mt-24 md:mt-0">
+          <div className="w-screen h-[70vh] md:h-[120vh] relative mt-8 md:mt-24">
             <div className="relative">
               <spline-viewer
                 url="https://prod.spline.design/yCeW7w4VEu5eoC27/scene.splinecode"
@@ -304,7 +304,7 @@ function App() {
               className="vertical-timeline-element--work"
               contentStyle={{ background: 'linear-gradient(to right, #00a267, #ff8300, #6a1bb8)', color: '#fff' }}
               contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-              date="2011 - present"
+              date="2024 - present"
               iconStyle={{ background: 'black', color: '#fff' }}
               icon={<img src={SpacepayLab} height={50} width={50} className="hidden md:block" style={{ padding: 1, marginLeft: 5 }} alt="Description of the image" />
               }>
@@ -317,7 +317,7 @@ function App() {
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               contentStyle={{ background: 'linear-gradient(to right, #4a707a, #f7b046, #ffffff)', color: '#fff' }}
-              date="2010 - 2011"
+              date="2022 - 2024"
               iconStyle={{ background: '#4a707a', color: '#fff' }}
               icon={<img src={Gumshoe} height={40} width={40} style={{ padding: 1, marginLeft: 10, marginTop: 10 }} className="hidden md:block" alt="Description of the image" />
               }>
@@ -333,7 +333,7 @@ function App() {
             </VerticalTimelineElement>
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              date="2008 - 2010"
+              date="2021 - 2024"
               iconStyle={{ background: 'white', color: '#fff' }}
               contentStyle={{ background: '#FF3535', color: '#fff' }}
               icon={<img src={Mogroup} height={40} width={40} className="hidden md:block" style={{ padding: 1, marginLeft: 10, marginTop: 10 }} alt="Description of the image" />
