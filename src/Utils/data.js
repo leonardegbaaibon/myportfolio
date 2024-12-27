@@ -4,31 +4,73 @@ export const projectsData = [
       imagePath: "/Image/Developer.png",
       technologies: ["React","Vite", "Tailwind CSS", "JavaScript"],
       githubLink: "https://github.com/leonardegbaaibon/myportfolio",
+      liveLink: "https://leonardegbaaibon.vercel.app/",
+      description: "This is my portfolio website, where I showcase my projects and skills. It's built with React, Vite, Tailwind CSS, and JavaScript. I used Vite for the build tool, Tailwind CSS for styling, and JavaScript for the frontend.",
+      stage: "Completed",
+      isPrivate: false
     },
     {
       name: "Proptibaank",
       imagePath: "/Image/proptibaank.png",
       technologies: ["MongoDB", "React","React Native","Redux","Expo"],
       githubLink: "https://github.com/Mogrouporg",
+      liveLink: "https://play.google.com/store/apps/details?id=com.realcod3r.moapp1&hl=en",
+      description: "This is a mobile application that allows users to manage their finances. It's built with React Native, Expo, Redux, and MongoDB. I used Expo for the build tool, Redux for state management, and MongoDB for the database.",
+      stage: "MVP",
+      isPrivate: true,
     },
     {
-      name: "Payment Application",
+      name: "Spacepaylabs",
       imagePath: "/Image/spacepaylab2.png",
-      technologies: ["Expo","Rddux", "React","Vite","Tailwind","Typescript"],
+      technologies: ["Expo","Redux","Tailwind","Typescript"],
       githubLink: "https://github.com/Spacepaylabs",
+      liveLink: "https://spacepaylabs.com",
+      description: "This is a mobile application that allows users to manage their finances. It's built with React Native, Expo, Redux, and MongoDB. I used Expo for the build tool, Redux for state management, and MongoDB for the database.",
+      stage: "Ongoing",
+      isPrivate: true,
     },
     {
       name: "Loveletter (telematics Software)",
       imagePath: "/Image/loveletter.png",
-      technologies: ["Javascript", "Mock.io", "React",],
+      technologies: ["Javascript", "Mock.io", "React"],
       githubLink: "https://github.com/leonardegbaaibon/SubrogateSoftware",
+      liveLink: "https://love-letter-lmbr.vercel.app/",
+      description: "An automated telematics software that accelerates the subrogation process through comprehensive judgment parameters. The system analyzes key factors including driver distraction, fatigue levels, chain reaction scenarios, speed limit violations, driver behavior patterns, weather conditions, and traffic rule compliance. Specialized focus on distraction detection and speed monitoring algorithms to provide accurate assessment for subrogation cases.",
+      stage: "MVP",
+      isPrivate: true,
+      note: "Private project for federal organization"
     },
     {
       name: "Gumshoe (Telematics Software)",
       imagePath: "/Image/gumshoe.png",
-      technologies: ["React Native", "Kotlin", "JAVA", "Native code","Redux"],
+      technologies: ["React Native", "Kotlin", "JAVA", "Native code", "Redux"],
       githubLink: "https://github.com/Tsaron-Tech",
+      liveLink: "https://gumshoe.vercel.app/",
+      description: "A specialized telematics application focused on two critical driving safety parameters: driver distraction and speed limit compliance. The app features advanced crash detection triggers and real-time monitoring of driver attention levels. Built with native implementation for optimal performance, it provides immediate alerts and detailed analytics on distraction events and speed violations to enhance road safety.",
+      stage: "Ongoing",
+      isPrivate: true,
+      note: "Private project with public demo version available"
     },
+    {
+      name: "WorkerGen Assessment(CRM dashboard)",
+      imagePath: "/Image/worker.png",
+      technologies: ["Next JS", "Tailwind", "CSS3", "Typescript", "React"],
+      githubLink: "https://github.com/leonardegbaaibon/workergen-assessment",
+      liveLink: "https://workergen-assessment.vercel.app/",
+      description: "A frontend assessment project showcasing responsive design and interactive UI elements. Features include a fully responsive CRM dashboard layout. Built to demonstrate proficiency in modern frontend development practices, with special attention to user experience and micro-interactions.",
+      stage: "Completed",
+      isPrivate: false,
+    },
+    {
+      name: "Musha",
+      imagePath: "/Image/musha.png",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+      githubLink: "https://github.com/yourusername/musha",
+      liveLink: "https://musha.vercel.app",
+      description: "A property technology platform that facilitates property rental, sales, and leasing. The application streamlines the process of connecting property owners with potential tenants and buyers, featuring comprehensive property listings, automated scheduling for viewings, and secure transaction management.",
+      stage: "Completed",
+      isPrivate: false
+    }
   ];
 
 
