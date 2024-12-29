@@ -64,8 +64,8 @@ export const projectsData = [
     {
       name: "Musha",
       imagePath: "/Image/musha.png",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
-      githubLink: "https://github.com/yourusername/musha",
+      technologies: ["React native", "Expo", "mock.io", "Context API","Redux" ],
+      githubLink: "https://github.com/leonardegbaaibon/musha",
       liveLink: "https://musha.vercel.app",
       description: "A property technology platform that facilitates property rental, sales, and leasing. The application streamlines the process of connecting property owners with potential tenants and buyers, featuring comprehensive property listings, automated scheduling for viewings, and secure transaction management.",
       stage: "Completed",
