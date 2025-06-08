@@ -29,7 +29,7 @@ export const projectsData = [
       imagePath: "/Image/blockex.png",
       technologies: ["React", "Node.js", "Web3.js", "TailwindCSS", "Express", "MongoDB"],
       githubLink: "https://github.com/leonardegbaaibon/blockex-trade",
-      liveLink: "https://blockex-trade.com",
+      liveLink: "https://blockex.trade",
       description: "A decentralized cryptocurrency exchange platform with real-time trading, portfolio management, and advanced charting capabilities.",
       stage: "Completed",
       isPrivate: false,
