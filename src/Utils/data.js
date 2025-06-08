@@ -129,7 +129,7 @@ export const projectsData = [
       imagePath: "/Image/ticz.png",
       technologies: ["Next.js", "TailwindCSS", "Local Storage", "sessionStorage", "React",],
       githubLink: "https://github.com/leonardegbaaibon/ticketgenerator",
-      liveLink: "https://ticketmaster.app",
+      liveLink: "https://ticz-l.netlify.app",
       description: "A modern event ticketing platform with features for event creation, ticket management, and secure payment processing. Includes QR code generation for tickets and real-time seat selection.",
       stage: "Beta",
       isPrivate: false,
