@@ -1,185 +1,131 @@
-import { motion, useAnimation, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { recommendations } from '../Utils/data';
-import { FiLinkedin, FiMessageSquare, FiArrowRight } from 'react-icons/fi';
+import { FiLinkedin } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 
-const RecommendationCard = ({ recommendation, index, isDarkMode, isMobile }) => {
-  const controls = useAnimation();
+const RecommendationCard = ({ recommendation, index, isDarkMode }) => {
   const [isHovered, setIsHovered] = useState(false);
-  
-  // Mouse position values for parallax effect
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  
-  // Transform mouse position into rotation values
-  const rotateX = useTransform(mouseY, [-100, 100], [5, -5]);
-  const rotateY = useTransform(mouseX, [-100, 100], [-5, 5]);
-  
-  // Add spring physics to the rotation
-  const springRotateX = useSpring(rotateX, { stiffness: 100, damping: 30 });
-  const springRotateY = useSpring(rotateY, { stiffness: 100, damping: 30 });
-
-  const handleMouseMove = (event) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    mouseX.set(event.clientX - centerX);
-    mouseY.set(event.clientY - centerY);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-    setIsHovered(false);
-  };
-
-  useEffect(() => {
-    controls.start({
-      opacity: 1,
-      y: 0,
-      transition: { delay: index * 0.2, duration: 0.5 }
-    });
-  }, [controls, index]);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={controls}
-      whileHover={{ scale: 1.02 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onHoverStart={() => setIsHovered(true)}
-      style={{
-        rotateX: springRotateX,
-        rotateY: springRotateY,
-        perspective: 1000
+      initial={{ opacity: 0, y: 50, rotateX: -15 }}
+      whileInView={{ 
+        opacity: 1, 
+        y: 0, 
+        rotateX: 0,
+        transition: { 
+          duration: 0.8,
+          delay: index * 0.2,
+          type: "spring",
+          stiffness: 100
+        }
       }}
-      className={`relative p-6 md:p-8 rounded-2xl ${
-        isDarkMode ? 'bg-surface-dark' : 'bg-surface-light'
-      } shadow-lg hover:shadow-xl transition-all duration-300 transform-gpu`}
+      viewport={{ once: true, margin: "-100px" }}
+      whileHover={{ 
+        y: -10,
+        scale: 1.02,
+        transition: { duration: 0.3 }
+      }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      className={`relative p-6 rounded-2xl transform-gpu ${
+        isDarkMode 
+          ? 'bg-surface-dark' 
+          : 'bg-surface-light'
+      } shadow-lg hover:shadow-2xl transition-all duration-300`}
+      style={{
+        transformStyle: "preserve-3d",
+        perspective: "1000px"
+      }}
     >
-      {/* Floating Gradient Background */}
+      {/* Background Gradient */}
       <motion.div
-        className="absolute inset-0 rounded-2xl opacity-20"
+        className="absolute inset-0 rounded-2xl opacity-50"
         animate={{
-          background: [
-            'radial-gradient(circle at 0% 0%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)',
-            'radial-gradient(circle at 100% 100%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)',
-            'radial-gradient(circle at 0% 100%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)',
-            'radial-gradient(circle at 100% 0%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)',
-            'radial-gradient(circle at 0% 0%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)',
-          ]
+          background: isHovered
+            ? [
+                'radial-gradient(circle at 0% 0%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)',
+                'radial-gradient(circle at 100% 100%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)',
+                'radial-gradient(circle at 0% 100%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)',
+                'radial-gradient(circle at 100% 0%, rgba(var(--primary-rgb), 0.2) 0%, transparent 50%)'
+              ]
+            : 'none'
         }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "linear"
-        }}
+        transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
       />
 
-      {/* Quote Icon */}
-      <div className="relative">
+      {/* Content */}
+      <div className="relative z-10">
         <motion.div
-          animate={isHovered ? { scale: 1.1, rotate: 10 } : { scale: 1, rotate: 0 }}
-          className={`absolute -top-4 left-0 text-4xl ${
-            isDarkMode ? 'text-primary-dark/20' : 'text-primary-light/20'
+          initial={{ scale: 0.5, opacity: 0 }}
+          whileInView={{ 
+            scale: 1, 
+            opacity: 1,
+            transition: { delay: index * 0.2 + 0.3, duration: 0.5 }
+          }}
+          viewport={{ once: true }}
+          className={`text-4xl mb-4 ${
+            isDarkMode ? 'text-primary-dark' : 'text-primary-light'
           }`}
         >
           "
         </motion.div>
 
-        {/* Recommendation Text */}
         <motion.p
-          className={`relative mb-6 pt-4 text-lg italic ${
-            isDarkMode ? 'text-text-dark/80' : 'text-text-light/80'
+          className={`text-lg mb-6 ${
+            isDarkMode ? 'text-text-dark/90' : 'text-text-light/90'
           }`}
         >
           {recommendation.text}
         </motion.p>
 
-        {/* Author Info */}
-        <div className="relative flex items-center gap-4 mt-6">
-          <motion.div
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            className="relative w-12 h-12 rounded-full overflow-hidden"
-          >
+        <motion.div 
+          className="flex items-center gap-4"
+          initial={{ x: -20, opacity: 0 }}
+          whileInView={{ 
+            x: 0, 
+            opacity: 1,
+            transition: { delay: index * 0.2 + 0.4, duration: 0.5 }
+          }}
+          viewport={{ once: true }}
+        >
+          <div className="relative">
             <img
               src={recommendation.image}
               alt={recommendation.author}
-              className="w-full h-full object-cover"
+              className="w-14 h-14 rounded-full object-cover"
             />
             <motion.div
-              className="absolute inset-0 bg-gradient-to-tr from-primary-light/20 to-transparent"
-              animate={{
-                opacity: [0.2, 0.4, 0.2],
-                scale: [1, 1.05, 1],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
+              className={`absolute inset-0 rounded-full ${
+                isDarkMode ? 'bg-primary-dark' : 'bg-primary-light'
+              }`}
+              initial={{ scale: 1.4, opacity: 0.3 }}
+              animate={{ scale: 1, opacity: 0 }}
+              transition={{ duration: 1.5, repeat: Infinity }}
             />
-          </motion.div>
-
-          <div className="flex-1">
-            <motion.h4
-              whileHover={{ x: 5 }}
-              className={`font-semibold ${
-                isDarkMode ? 'text-text-dark' : 'text-text-light'
-              }`}
-            >
-              {recommendation.author}
-            </motion.h4>
-            <motion.p
-              initial={{ opacity: 0.7 }}
-              whileHover={{ opacity: 1 }}
-              className={`text-sm ${
-                isDarkMode ? 'text-text-dark/60' : 'text-text-light/60'
-              }`}
-            >
-              {recommendation.role} at {recommendation.company}
-            </motion.p>
           </div>
-
-          <motion.a
-            href={recommendation.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.95 }}
-            className={`p-2 rounded-full ${
-              isDarkMode
-                ? 'bg-background-dark hover:bg-background-dark/80'
-                : 'bg-background-light hover:bg-background-light/80'
-            } transition-colors duration-200`}
-          >
-            <FiLinkedin className={`text-xl ${
-              isDarkMode ? 'text-primary-dark' : 'text-primary-light'
-            }`} />
-          </motion.a>
-        </div>
-
-        {/* Connect Button */}
-        <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className={`mt-6 w-full flex items-center justify-center gap-2 py-2 rounded-xl ${
-            isDarkMode
-              ? 'bg-background-dark hover:bg-background-dark/80'
-              : 'bg-background-light hover:bg-background-light/80'
-          } transition-colors duration-200`}
-        >
-          <FiMessageSquare className={isDarkMode ? 'text-primary-dark' : 'text-primary-light'} />
-          <span className={`text-sm ${
-            isDarkMode ? 'text-text-dark/80' : 'text-text-light/80'
-          }`}>
-            Connect with {recommendation.author.split(' ')[0]}
-          </span>
-          <FiArrowRight className={isDarkMode ? 'text-primary-dark' : 'text-primary-light'} />
-        </motion.button>
+          <div>
+            <h4 className={`font-semibold ${
+              isDarkMode ? 'text-text-dark' : 'text-text-light'
+            }`}>
+              {recommendation.author}
+            </h4>
+            <motion.a
+              href={recommendation.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className={`inline-flex items-center gap-1 text-sm ${
+                isDarkMode ? 'text-primary-dark' : 'text-primary-light'
+              } hover:underline mt-1`}
+            >
+              <FiLinkedin />
+              <span>Connect</span>
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );
@@ -187,29 +133,22 @@ const RecommendationCard = ({ recommendation, index, isDarkMode, isMobile }) => 
 
 const Recommendations = () => {
   const { isDarkMode } = useTheme();
-  const [isMobile, setIsMobile] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(3);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
-  }, []);
+  const loadMore = () => {
+    setVisibleCount(prev => Math.min(prev + 3, recommendations.length));
+  };
 
   return (
-    <section className={`py-20 ${isDarkMode ? 'bg-surface-dark' : 'bg-surface-light'}`}>
+    <section className={`py-20 overflow-hidden ${
+      isDarkMode ? 'bg-background-dark' : 'bg-background-light'
+    }`}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
             isDarkMode ? 'text-text-dark' : 'text-text-light'
@@ -223,16 +162,43 @@ const Recommendations = () => {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recommendations.map((recommendation, index) => (
-            <RecommendationCard
-              key={index}
-              recommendation={recommendation}
-              index={index}
-              isDarkMode={isDarkMode}
-              isMobile={isMobile}
-            />
-          ))}
+        <div className="relative">
+          {/* Background Gradient Elements */}
+          <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-secondary-light/10 dark:bg-secondary-dark/10 rounded-full blur-3xl" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+            {recommendations.slice(0, visibleCount).map((recommendation, index) => (
+              <RecommendationCard
+                key={index}
+                recommendation={recommendation}
+                index={index}
+                isDarkMode={isDarkMode}
+              />
+            ))}
+          </div>
+
+          {visibleCount < recommendations.length && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="text-center mt-12"
+            >
+              <motion.button
+                onClick={loadMore}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-8 py-3 rounded-full ${
+                  isDarkMode 
+                    ? 'bg-primary-dark text-white' 
+                    : 'bg-primary-light text-white'
+                } shadow-lg hover:shadow-xl transition-all duration-300`}
+              >
+                Load More Testimonials
+              </motion.button>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>

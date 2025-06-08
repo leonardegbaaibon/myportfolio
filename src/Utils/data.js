@@ -332,29 +332,23 @@ export const workExperience = [
 
 export const recommendations = [
   {
-    text: "Leonard is a Kotlin maestro who transforms design concepts into reliable and scalable applications. His deep understanding of mobile development and attention to detail make him an invaluable asset to any team.",
+    text: "Leonard is a Kotlin maestro who transforms design concepts into reliable and scalable applications. His deep understanding of mobile development and attention to detail make him an invaluable asset.",
     author: "Elvis Udoh",
-    role: "Senior Software Engineer",
-    company: "Blockspace Technologies",
     image: "/Image/Elvis.jpg",
     linkedin: "https://www.linkedin.com/in/elvis-udoh/"
   },
   {
-    text: "A creative powerhouse in web app development, Leonard consistently delivers innovative solutions that blend beautiful design with robust functionality. His work on our blockchain projects has been exceptional.",
+    text: "A creative powerhouse in web app development, Leonard consistently delivers innovative solutions that blend beautiful design with robust functionality. His work on blockchain projects has been exceptional.",
     author: "Opeyemi Abiodun",
-    role: "Technical Lead",
-    company: "Mo Group",
     image: "/Image/Opedev.jpg",
     linkedin: "https://www.linkedin.com/in/opeyemi-abiodun-aa327920a/"
   },
   {
     text: "Leonard's expertise in Kotlin and mobile development is outstanding. He has a unique ability to tackle complex technical challenges while maintaining a strong focus on user experience.",
     author: "Oluwafemi Ogunnote",
-    role: "Product Manager",
-    company: "Tsaron Technologies",
     image: "/Image/femi.jpg",
     linkedin: "https://www.linkedin.com/in/oluwafemi-ogunnote-76207a151/"
-  }
+  },
 ];
 
 export const teachingExperience = {
