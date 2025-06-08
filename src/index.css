@@ -4,16 +4,90 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap'); */
 
+@layer base {
+  :root {
+    --color-primary: theme('colors.blue.500');
+    --color-secondary: theme('colors.purple.500');
+    --color-background: theme('colors.white');
+    --color-surface: theme('colors.gray.100');
+    --color-text: theme('colors.gray.900');
+    --primary-rgb: 59, 130, 246; /* Blue-500 */
+  }
+
+  .dark {
+    --color-primary: theme('colors.blue.400');
+    --color-secondary: theme('colors.purple.400');
+    --color-background: theme('colors.gray.900');
+    --color-surface: theme('colors.gray.800');
+    --color-text: theme('colors.gray.50');
+    --primary-rgb: 96, 165, 250; /* Blue-400 */
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 rounded-full bg-primary-light dark:bg-primary-dark text-white transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-full bg-secondary-light dark:bg-secondary-dark text-white transition-all duration-300;
+  }
+
+  .card {
+    @apply rounded-lg overflow-hidden shadow-lg bg-surface-light dark:bg-surface-dark transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-12 text-center text-text-light dark:text-text-dark;
+  }
+}
+
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
- :root {
-  /* font-weight: 400; */
-  font-family: "Urbanist", sans-serif;
-  /* color-scheme: light dark; */
-  /* color: rgba(255, 255, 255, 0.87); */
-  background-color: rgb(0, 0, 0);
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
 }
+
+::-webkit-scrollbar-track {
+  @apply bg-surface-light dark:bg-surface-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-light dark:bg-primary-dark rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-dark dark:bg-primary-light;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark;
+}
+
+/* Glass effect */
+.glass {
+  @apply backdrop-blur-lg bg-white/10 dark:bg-black/10;
+}
+
 /* 
 a {
   font-weight: 500;
