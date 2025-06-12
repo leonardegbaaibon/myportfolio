@@ -13,7 +13,9 @@ import WorkExperience from './components/WorkExperience';
 import Teaching from './components/Teaching';
 import Recommendations from './components/Recommendations';
 import GetInTouch from './components/GetInTouch';
+import TechnologiesSection from './components/TechnologiesSection';
 import { contactInfo } from './Utils/data';
+import TeachingSection from "./components/TeachingSection";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -178,6 +180,9 @@ const App = () => {
         </div>
       </section>
 
+      {/* Technologies Section */}
+      <TechnologiesSection />
+
       {/* Projects Section */}
       <section id="projects">
         <ProjectsSection projects={projectsData} />
@@ -191,6 +196,7 @@ const App = () => {
       {/* Teaching Section */}
       <section id="teaching">
         <Teaching />
+        <TeachingSection />
       </section>
 
       {/* Recommendations Section */}

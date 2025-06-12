@@ -1,208 +1,137 @@
 import { motion } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
-import { FiMail, FiGithub, FiLinkedin, FiGlobe, FiMessageSquare, FiYoutube } from 'react-icons/fi';
-import { 
-  SiReact, SiVuedotjs, SiKotlin, SiTypescript,
-  SiJavascript, SiNodedotjs, SiPython, SiFigma,
-  SiTailwindcss, SiNextdotjs, SiFirebase, SiMongodb,
-  SiDocker, SiGit, SiJest, SiRedux
-} from 'react-icons/si';
-import { useState, useEffect } from 'react';
+import { IoLogoGithub, IoLogoLinkedin, IoLogoYoutube, IoCalendarOutline, IoMailOutline } from 'react-icons/io5';
 import { contactInfo } from '../Utils/data';
-
-const ContactButton = ({ icon: Icon, label, href, isDarkMode, isPrimary = false }) => (
-  <motion.a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    whileHover={{ scale: 1.02 }}
-    whileTap={{ scale: 0.98 }}
-    className={`flex items-center justify-center gap-3 px-6 py-4 rounded-xl transition-all duration-200 ${
-      isPrimary
-        ? isDarkMode
-          ? 'bg-primary-dark text-white'
-          : 'bg-primary-light text-white'
-        : isDarkMode
-        ? 'bg-surface-dark text-text-dark'
-        : 'bg-surface-light text-text-light'
-    } hover:shadow-lg`}
-  >
-    <Icon className="text-xl" />
-    <span className="font-medium">{label}</span>
-  </motion.a>
-);
-
-const SkillIcon = ({ Icon, name, color, isDarkMode }) => (
-  <motion.div
-    whileHover={{ y: -5 }}
-    className={`p-4 rounded-xl ${
-      isDarkMode ? 'bg-surface-dark' : 'bg-surface-light'
-    } shadow-lg group cursor-pointer relative`}
-  >
-    <Icon className={`w-12 h-12 transition-colors duration-300 ${
-      isDarkMode ? 'text-gray-400 group-hover:text-' + color : 'text-' + color
-    }`} />
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileHover={{ opacity: 1, y: 0 }}
-      className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-3 py-1 rounded-full text-xs ${
-        isDarkMode ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'
-      } whitespace-nowrap shadow-lg`}
-    >
-      {name}
-    </motion.div>
-  </motion.div>
-);
+import { useTheme } from '../context/ThemeContext';
 
 const GetInTouch = () => {
   const { isDarkMode } = useTheme();
-  const [isMobile, setIsMobile] = useState(false);
-  const [hoveredSkill, setHoveredSkill] = useState(null);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
-  }, []);
-
-  const skills = [
-    { Icon: SiReact, name: 'React', color: 'blue-400' },
-    { Icon: SiVuedotjs, name: 'Vue.js', color: 'green-500' },
-    { Icon: SiKotlin, name: 'Kotlin', color: 'purple-500' },
-    { Icon: SiTypescript, name: 'TypeScript', color: 'blue-600' },
-    { Icon: SiJavascript, name: 'JavaScript', color: 'yellow-400' },
-    { Icon: SiNodedotjs, name: 'Node.js', color: 'green-600' },
-    { Icon: SiPython, name: 'Python', color: 'blue-500' },
-    { Icon: SiFigma, name: 'Figma', color: 'purple-400' },
-    { Icon: SiTailwindcss, name: 'Tailwind CSS', color: 'cyan-400' },
-    { Icon: SiNextdotjs, name: 'Next.js', color: 'gray-700' },
-    { Icon: SiFirebase, name: 'Firebase', color: 'yellow-500' },
-    { Icon: SiMongodb, name: 'MongoDB', color: 'green-500' },
-    { Icon: SiDocker, name: 'Docker', color: 'blue-500' },
-    { Icon: SiGit, name: 'Git', color: 'orange-500' },
-    { Icon: SiJest, name: 'Jest', color: 'red-500' },
-    { Icon: SiRedux, name: 'Redux', color: 'purple-600' }
+  const contactMethods = [
+    {
+      icon: <IoMailOutline className="w-6 h-6" />,
+      label: 'Email',
+      value: contactInfo.email,
+      link: `mailto:${contactInfo.email}`,
+      description: 'Drop me a line anytime'
+    },
+    {
+      icon: <IoCalendarOutline className="w-6 h-6" />,
+      label: 'Schedule a Call',
+      value: 'Calendly',
+      link: contactInfo.scheduling,
+      description: 'Book a 30-minute chat'
+    },
+    {
+      icon: <IoLogoGithub className="w-6 h-6" />,
+      label: 'GitHub',
+      value: 'leonardegbaaibon',
+      link: contactInfo.github,
+      description: 'Check out my code'
+    },
+    {
+      icon: <IoLogoLinkedin className="w-6 h-6" />,
+      label: 'LinkedIn',
+      value: 'leonard-egbaaibon',
+      link: contactInfo.linkedin,
+      description: 'Let\'s connect professionally'
+    },
+    {
+      icon: <IoLogoYoutube className="w-6 h-6" />,
+      label: 'YouTube',
+      value: 'yor-dev',
+      link: contactInfo.youtube,
+      description: 'Watch my tutorials'
+    }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+
   return (
-    <section className={`py-12 lg:py-20 ${isDarkMode ? 'bg-background-dark' : 'bg-background-light'}`}>
+    <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12 lg:mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 ${
-            isDarkMode ? 'text-text-dark' : 'text-text-light'
-          }`}>
-            Get in Touch
-          </h2>
-          <p className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto ${
-            isDarkMode ? 'text-text-dark/70' : 'text-text-light/70'
-          }`}>
-            Let's collaborate on your next project or discuss potential opportunities
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+          <p className="text-lg opacity-80 max-w-2xl mx-auto">
+            Whether you have a project in mind, want to collaborate, or just want to say hi,
+            I'd love to hear from you!
           </p>
         </motion.div>
 
-        {/* Contact Options */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <ContactButton
-              icon={FiMail}
-              label="Send Email"
-              href={`mailto:${contactInfo.email}`}
-              isDarkMode={isDarkMode}
-              isPrimary={true}
-            />
-            <ContactButton
-              icon={FiMessageSquare}
-              label="Schedule a Call"
-              href={contactInfo.scheduling}
-              isDarkMode={isDarkMode}
-              isPrimary={false}
-            />
-          </div>
-        </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+        >
+          {contactMethods.map((method, index) => (
+            <motion.a
+              key={method.label}
+              href={method.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`p-6 rounded-xl ${
+                isDarkMode 
+                  ? 'bg-surface-dark hover:bg-surface-dark/80' 
+                  : 'bg-surface-light hover:bg-surface-light/80'
+              } transition-all duration-300 group`}
+            >
+              <div className="flex items-start space-x-4">
+                <div className={`p-3 rounded-lg ${
+                  isDarkMode ? 'bg-background-dark' : 'bg-background-light'
+                } group-hover:text-primary-light transition-colors`}>
+                  {method.icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg mb-1">{method.label}</h3>
+                  <p className="text-sm opacity-80 mb-2">{method.description}</p>
+                  <p className="text-sm font-medium group-hover:text-primary-light transition-colors">
+                    {method.value}
+                  </p>
+                </div>
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
 
-        {/* Social Links */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <ContactButton
-              icon={FiGithub}
-              label="GitHub"
-              href={contactInfo.github}
-              isDarkMode={isDarkMode}
-            />
-            <ContactButton
-              icon={FiLinkedin}
-              label="LinkedIn"
-              href={contactInfo.linkedin}
-              isDarkMode={isDarkMode}
-            />
-            <ContactButton
-              icon={FiYoutube}
-              label="YouTube"
-              href={contactInfo.youtube}
-              isDarkMode={isDarkMode}
-            />
-            <ContactButton
-              icon={FiGlobe}
-              label="Portfolio"
-              href="/"
-              isDarkMode={isDarkMode}
-            />
-          </div>
-        </div>
-
-        {/* Skills Showcase */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className={`p-8 rounded-2xl ${
-            isDarkMode ? 'bg-surface-dark' : 'bg-surface-light'
-          } shadow-lg border ${
-            isDarkMode ? 'border-text-dark/5' : 'border-text-light/5'
-          }`}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-16"
         >
-          <h3 className={`text-2xl font-bold text-center mb-8 ${
-            isDarkMode ? 'text-text-dark' : 'text-text-light'
-          }`}>
-            Technologies I Work With
-          </h3>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.05
-                }
-              }
-            }}
-            className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4"
-          >
-            {skills.map((skill) => (
-              <SkillIcon
-                key={skill.name}
-                Icon={skill.Icon}
-                name={skill.name}
-                color={skill.color}
-                isDarkMode={isDarkMode}
-              />
-            ))}
-          </motion.div>
+          <p className="text-lg opacity-80">
+            Based in Nigeria • Available Worldwide
+          </p>
+          <p className="text-sm mt-2 opacity-60">
+            Response time: Usually within 24 hours
+          </p>
         </motion.div>
       </div>
     </section>

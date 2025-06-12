@@ -143,7 +143,7 @@ export const workExperience = [
     company: "Blockspace Technologies",
     position: "Software Developer",
     location: "Remote",
-    duration: "2022 - Present",
+    duration: "Nov 2024 - Present",
     description: "Leading blockchain infrastructure development and decentralized applications. Specializing in DeFi solutions and crypto trading platforms.",
     achievements: [
       "Architected BlockEx Trade platform with real-time order book and advanced charting",
@@ -153,13 +153,13 @@ export const workExperience = [
     ],
     technologies: [
       "React",
-      "Node.js",
+      "React Native",
+      "TailwindCSS",
       "Web3.js",
       "Supabase",
-      "TailwindCSS",
+      "Supabase Edge Functions",
       "TypeScript",
       "Netlify Functions",
-      "MongoDB",
       "WebSocket",
       "Chart.js"
     ],
@@ -183,15 +183,15 @@ export const workExperience = [
         description: "AI-powered market analytics with predictive insights",
         tech: ["React", "Supabase", "TailwindCSS", "Chart.js", "ChatGPT API"],
         image: "/Image/crytolensBlockex.png",
-        liveLink: "https://cryptolens.ai"
+        liveLink: "https://cryptolens.blockex.trade/"
       }
     ]
   },
   {
     company: "itspaydai",
-    position: "Lead Frontend Developer",
+    position: "Software Developer",
     location: "Remote",
-    duration: "2021 - 2022",
+    duration: "Feb 2023 - Sep 2023",
     description: "Led the development of an automated commission management platform, focusing on seamless payment processing and real-time analytics.",
     achievements: [
       "Designed and implemented the core commission calculation engine",
@@ -205,7 +205,6 @@ export const workExperience = [
       "Redux",
       "Firebase",
       "Stripe API",
-      "PayPal API",
       "TailwindCSS",
       "Node.js",
       "Express",
@@ -222,10 +221,78 @@ export const workExperience = [
     ]
   },
   {
+    company: "SledgerVaults",
+    position: "Frontend Developer",
+    location: "Remote",
+    duration: "Nov 2022 - Present",
+    description: "Developed secure digital asset management solutions with multi-signature support and automated compliance checks.",
+    achievements: [
+      "Built Sledger Vaults platform for institutional digital asset custody",
+      "Implemented multi-signature wallet architecture with threshold signing",
+      "Created automated compliance reporting system",
+      "Developed real-time asset tracking and portfolio management features"
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "ReactDOM",
+      "Redux",
+      "TailwindCSS",
+      "Figma",
+      "RESTful APIs",
+      "WebSocket",
+      "Chart.js",
+      "TypeScript",
+      "Web3.js",
+    ],
+    projects: [
+      {
+        name: "Sledger Vaults",
+        description: "Connecting software developers with curated project opportunities",
+        tech: ["Next.js", "TypeScript", "TailwindCSS", "Figma", "RESTful APIs", "WebSocket",],
+        image: "/Image/sledger.png",
+        liveLink: "https://sledgervaults.com"
+      }
+    ]
+  },
+  {
+    company: "Tsaron Technologies",
+    position: "Software Engineer",
+    location: "Remote",
+    duration: "Nov 2023 - Aug 2024",
+    description: "Full-stack development of enterprise solutions with focus on scalability and security. Specialized in safety and monitoring systems.",
+    achievements: [
+      "Developed driver safety monitoring system with acoustic processing",
+      "Implemented real-time data analysis and alert system",
+      "Created comprehensive driver safety analysis platform",
+      "Optimized system performance and reduced false positives by 60%"
+    ],
+    technologies: [
+      "React",
+      "React Native",
+      "Kotlin",
+      "Jetpack Compose",
+      "Java",
+      "TypeScript",
+      "Redux",
+      "Vue.js",
+      "Native Android"
+    ],
+    projects: [
+      {
+        name: "Gumshoe",
+        description: "Mobile driver distraction detection system using acoustic signals",
+        tech: ["Kotlin", "Redux", "Native Android", "Acoustic Processing"],
+        image: "/Image/gumshoe.png",
+        liveLink: "https://gumshoe.vercel.app"
+      }
+    ]
+  },
+  {
     company: "Mo Group",
     position: "Mobile Developer",
-    location: "Lagos, Nigeria",
-    duration: "2020 - 2021",
+    location: "HQ - Europe, Ulmenweg 16, 72076, Tubingen, Germany",
+    duration: "Feb 2024",
     description: "Led the development of cross-platform mobile applications focusing on fintech solutions and digital entertainment platforms.",
     achievements: [
       "Developed Proptibaank mobile banking app with over 50,000 active users",
@@ -254,6 +321,13 @@ export const workExperience = [
         liveLink: "https://proptibaank.com"
       },
       {
+        name: "Moonlight App",
+        description: "Mobile Streaming Platform",
+        tech: ["React Native", "Expo", "Redux", "React", "TailwindCSS"],
+        image: "/Image/moonlight.png",
+        liveLink: "https://moonlight.app"
+      },
+      {
         name: "Moonlight TV",
         description: "Android TV streaming platform with custom player",
         tech: ["Kotlin", "Jetpack Compose", "Android TV", "ExoPlayer"],
@@ -262,72 +336,6 @@ export const workExperience = [
       }
     ]
   },
-  {
-    company: "Sledger",
-    position: "Full Stack Developer",
-    location: "Remote",
-    duration: "2020 - 2021",
-    description: "Developed secure digital asset management solutions with multi-signature support and automated compliance checks.",
-    achievements: [
-      "Built Sledger Vaults platform for institutional digital asset custody",
-      "Implemented multi-signature wallet architecture with threshold signing",
-      "Created automated compliance reporting system",
-      "Developed real-time asset tracking and portfolio management features"
-    ],
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "AWS",
-      "Web3.js",
-      "Ethers.js",
-      "Docker",
-      "Redis",
-      "GraphQL"
-    ],
-    projects: [
-      {
-        name: "Sledger Vaults",
-        description: "Institutional-grade digital asset custody platform",
-        tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "AWS"],
-        image: "/Image/sledger.png",
-        liveLink: "https://sledgervaults.com"
-      }
-    ]
-  },
-  {
-    company: "Tsaron Technologies",
-    position: "Software Engineer",
-    location: "Remote",
-    duration: "2019 - 2020",
-    description: "Full-stack development of enterprise solutions with focus on scalability and security. Specialized in safety and monitoring systems.",
-    achievements: [
-      "Developed driver safety monitoring system with acoustic processing",
-      "Implemented real-time data analysis and alert system",
-      "Created comprehensive driver safety analysis platform",
-      "Optimized system performance and reduced false positives by 60%"
-    ],
-    technologies: [
-      "React",
-      "Kotlin",
-      "TypeScript",
-      "Redux",
-      "Node.js",
-      "MongoDB",
-      "Native Android",
-      "Signal Processing"
-    ],
-    projects: [
-      {
-        name: "Gumshoe",
-        description: "Mobile driver distraction detection system using acoustic signals",
-        tech: ["Kotlin", "Redux", "Native Android", "Acoustic Processing"],
-        image: "/Image/gumshoe.png",
-        liveLink: "https://gumshoe.vercel.app"
-      }
-    ]
-  }
 ];
 
 export const recommendations = [

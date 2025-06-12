@@ -1,21 +1,89 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { workExperience } from '../Utils/data';
-import { FiMapPin, FiCode, FiBriefcase, FiClock, FiFolder, FiAward, FiArrowRight, FiExternalLink } from 'react-icons/fi';
+import { 
+  FiMapPin, FiCode, FiBriefcase, FiClock, FiFolder, FiAward, 
+  FiArrowRight, FiExternalLink, FiPlay, FiDatabase, FiGlobe, 
+  FiLayers, FiServer, FiMessageSquare
+} from 'react-icons/fi';
+import { 
+  SiReact, SiVuedotjs, SiKotlin, SiTypescript, SiJavascript, SiNodedotjs, 
+  SiPython, SiFigma, SiTailwindcss, SiNextdotjs, SiFirebase, SiMongodb, 
+  SiDocker, SiGit, SiJest, SiRedux, SiExpo, SiWeb3Dotjs, SiExpress, 
+  SiSupabase, SiChartdotjs, SiAndroid, SiOpenai
+} from 'react-icons/si';
 import { useState, useEffect } from 'react';
 
-const TechBadge = ({ tech, isDarkMode }) => (
-  <motion.span
-    whileHover={{ scale: 1.05 }}
-    className={`px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1 ${
-      isDarkMode
-        ? 'bg-primary-dark/10 text-primary-dark'
-        : 'bg-primary-light/10 text-primary-light'
-    } transition-colors duration-200`}
-  >
-    {tech}
-  </motion.span>
-);
+const getTechIcon = (tech) => {
+  const iconMap = {
+    // Web Frameworks
+    'React': SiReact,
+    'React.js': SiReact,
+    'Vue.js': SiVuedotjs,
+    'Next.js': SiNextdotjs,
+    
+    // Mobile & Desktop
+    'Kotlin': SiKotlin,
+    'Android TV': SiAndroid,
+    'Expo': SiExpo,
+    'Jetpack Compose': FiLayers,
+    
+    // Languages
+    'TypeScript': SiTypescript,
+    'JavaScript': SiJavascript,
+    'Python': SiPython,
+    
+    // Backend & Database
+    'Node.js': SiNodedotjs,
+    'Express': SiExpress,
+    'MongoDB': SiMongodb,
+    'Firebase': SiFirebase,
+    'Supabase': SiSupabase,
+    
+    // Design & Styling
+    'Figma': SiFigma,
+    'Tailwind CSS': SiTailwindcss,
+    'TailwindCSS': SiTailwindcss,
+    
+    // DevOps & Tools
+    'Docker': SiDocker,
+    'Git': SiGit,
+    'Jest': SiJest,
+    
+    // State Management & APIs
+    'Redux': SiRedux,
+    'Web3.js': SiWeb3Dotjs,
+    'Chart.js': SiChartdotjs,
+    'ChatGPT API': SiOpenai,
+    'WebSocket': FiMessageSquare,
+    
+    // Media & Storage
+    'ExoPlayer': FiPlay,
+    'Local Storage': FiDatabase,
+    'sessionStorage': FiDatabase,
+    
+    // Other
+    'RESTful APIs': FiServer
+  };
+  return iconMap[tech] || FiCode;
+};
+
+const TechBadge = ({ tech, isDarkMode }) => {
+  const Icon = getTechIcon(tech);
+  return (
+    <motion.span
+      whileHover={{ scale: 1.05 }}
+      className={`px-2 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1.5 ${
+        isDarkMode
+          ? 'bg-primary-dark/10 text-primary-dark'
+          : 'bg-primary-light/10 text-primary-light'
+      } transition-colors duration-200`}
+    >
+      <Icon className="text-base" />
+      <span>{tech}</span>
+    </motion.span>
+  );
+};
 
 const ProjectCard = ({ project, isDarkMode, isMobile }) => (
   <motion.div

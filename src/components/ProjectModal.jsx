@@ -1,5 +1,7 @@
 import { IoClose, IoGlobeOutline, IoLogoGithub } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
+import { FiX, FiGithub, FiExternalLink, FiDownload } from 'react-icons/fi';
+import { getTechIcon } from './WorkExperience';
 
 function ProjectModal({ project, isOpen, onClose, onVisit }) {
   if (!project || !isOpen) return null;
@@ -83,17 +85,21 @@ function ProjectModal({ project, isOpen, onClose, onVisit }) {
               >
                 <h3 className="text-white font-medium mb-3">Technologies</h3>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.1 * index }}
-                      className="bg-zinc-800 px-3 py-1 rounded-full text-xs sm:text-sm text-gray-300"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
+                  {project.technologies.map((tech, index) => {
+                    const Icon = getTechIcon(tech);
+                    return (
+                      <motion.span
+                        key={index}
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 0.1 * index }}
+                        className="bg-zinc-800 px-2 py-1 rounded-full text-xs sm:text-sm text-gray-300 inline-flex items-center gap-1.5"
+                      >
+                        <Icon className="text-base" />
+                        <span>{tech}</span>
+                      </motion.span>
+                    );
+                  })}
                 </div>
               </motion.div>
             </div>
