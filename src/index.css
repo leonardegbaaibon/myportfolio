@@ -3,74 +3,70 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --color-primary: #3b82f6;
-    --color-secondary: #8b5cf6;
-    --primary-rgb: 59, 130, 246;
-    --secondary-rgb: 139, 92, 246;
-  }
-
-  .dark {
-    --color-primary: #60a5fa;
-    --color-secondary: #a78bfa;
-    --primary-rgb: 96, 165, 250;
-    --secondary-rgb: 167, 139, 250;
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply antialiased font-sans overflow-x-hidden;
+    @apply antialiased font-sans bg-cream text-ink overflow-x-hidden;
   }
 
   ::selection {
-    background-color: rgba(59, 130, 246, 0.25);
-    color: #3b82f6;
+    @apply bg-butter text-ink;
   }
+
+  /* The outline is the design. Keep focus visible and in the same language. */
+  :focus-visible {
+    outline: 2px solid theme('colors.clay');
+    outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { @apply bg-cream; }
+  ::-webkit-scrollbar-thumb { @apply bg-ink; border: 2px solid theme('colors.cream'); }
 }
 
 @layer components {
-  .btn-primary {
-    @apply px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2;
+  /* Outlined block with a flat offset shadow. The one recurring surface. */
+  .slab {
+    @apply border-2 border-ink bg-sheet shadow-drop;
   }
 
-  .btn-secondary {
-    @apply px-6 py-3 rounded-xl font-semibold bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 hover:border-blue-500 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2;
+  .btn {
+    @apply inline-flex items-center gap-2 border-2 border-ink bg-sheet shadow-drop-sm
+           px-4 py-2.5 text-sm font-bold tracking-[-0.02em] no-underline
+           transition-transform duration-100;
+  }
+  .btn:hover {
+    @apply translate-x-[2px] translate-y-[2px] shadow-drop-xs;
+  }
+  .btn-clay  { @apply bg-clay text-sheet; }
+  .btn-olive { @apply bg-olive text-sheet; }
+
+  /* Small outlined code chip, used for stages and stack names. */
+  .flag {
+    @apply border-2 border-ink px-[7px] py-px font-mono text-[10.5px] font-medium whitespace-nowrap;
   }
 
-  .card-premium {
-    @apply rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200 dark:border-gray-800 shadow-xl transition-all duration-300;
+  .tag {
+    @apply border-[1.5px] border-ink bg-cream px-1.5 py-px font-mono text-[10.5px];
   }
 
-  .glass-pill {
-    @apply px-3 py-1.5 rounded-full text-xs font-medium backdrop-blur-md bg-white/60 dark:bg-white/5 border border-gray-200 dark:border-gray-800;
+  /* Highlighter behind a run of words. Clones across line breaks. */
+  .mark {
+    @apply bg-butter px-[0.12em];
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
-
-  .section-title {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-center mb-4 text-gray-900 dark:text-gray-50;
-  }
-
-  .section-subtitle {
-    @apply text-base sm:text-lg max-w-2xl mx-auto text-center text-gray-600 dark:text-gray-400 mb-12;
-  }
-
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400;
-  }
+  .mark-sky   { @apply bg-sky; }
+  .mark-blush { @apply bg-blush; }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-gray-700 rounded-full hover:bg-gray-400 dark:hover:bg-gray-600;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

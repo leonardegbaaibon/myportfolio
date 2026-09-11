@@ -1,78 +1,56 @@
 /** @type {import('tailwindcss').Config} */
+
+// Workshop design tokens. The palette is committed to a single warm light
+// look, so there is no dark variant and no `darkMode` strategy here.
+const ink = '#1A1713';
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Urbanist', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Lexend Tera', 'Urbanist', 'sans-serif'],
+        sans: ['Bricolage Grotesque', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['Bricolage Grotesque', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
-        syne: ['Syne', 'sans-serif'],
-        grotesk: ['Space Grotesk', 'Urbanist', 'sans-serif'],
       },
       colors: {
-        primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          light: '#3b82f6',
-          dark: '#60a5fa',
-        },
-        secondary: {
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          light: '#8b5cf6',
-          dark: '#a78bfa',
-        },
-        accent: {
-          emerald: '#10b981',
-          cyan: '#06b6d4',
-          amber: '#f59e0b',
-        },
-        background: {
-          light: '#fafafa',
-          dark: '#090d16',
-        },
-        surface: {
-          light: '#ffffff',
-          dark: '#111827',
-          darkElevated: '#1a2234',
-        },
-        text: {
-          light: '#0f172a',
-          dark: '#f8fafc',
-          mutedLight: '#64748b',
-          mutedDark: '#94a3b8',
-        }
+        cream:  '#F4EEE1',
+        sheet:  '#FFFBF3',
+        ink,
+        soft:   '#58514A',
+        faint:  '#8E867C',
+        rule:   '#E4DCCC',
+        clay:   '#C4562F',
+        olive:  '#667544',
+        butter: '#F0C23F',
+        sky:    '#9FC0CE',
+        lilac:  '#C3B3DA',
+        blush:  '#EDB5A5',
       },
-      backgroundImage: {
-        'radial-glow': 'radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.18) 0%, transparent 70%)',
-        'radial-glow-purple': 'radial-gradient(circle at 100% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 60%)',
-        'grid-pattern': 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
-        'grid-pattern-light': 'linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px)',
-      },
+      // Flat offset shadows only. No blur, no spread, no colour bleed.
       boxShadow: {
-        'glow-sm': '0 0 15px -3px rgba(59, 130, 246, 0.3)',
-        'glow-md': '0 0 25px -5px rgba(59, 130, 246, 0.4)',
-        'glow-purple': '0 0 25px -5px rgba(139, 92, 246, 0.35)',
+        drop:   `5px 5px 0 ${ink}`,
+        'drop-sm': `3px 3px 0 ${ink}`,
+        'drop-xs': `1px 1px 0 ${ink}`,
+        none: 'none',
       },
-      animation: {
-        'float': 'float 4s ease-in-out infinite',
-        'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      borderRadius: {
+        none: '0',
+        DEFAULT: '2px',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-8px)' },
-        }
-      }
+        slide: {
+          from: { transform: 'translateX(0)' },
+          to:   { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        slide: 'slide 42s linear infinite',
+      },
     },
   },
   plugins: [],
