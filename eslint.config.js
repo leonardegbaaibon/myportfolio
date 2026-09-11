@@ -38,4 +38,9 @@ export default [
       ],
     },
   },
+  {
+    // Build-time config files run in Node, not the browser.
+    files: ['vite.config.js', 'tailwind.config.js', 'postcss.config.cjs', 'eslint.config.js'],
+    languageOptions: { globals: globals.node },
+  },
 ]
