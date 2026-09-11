@@ -1,138 +1,170 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { IoLogoGithub, IoLogoLinkedin, IoLogoYoutube, IoCalendarOutline, IoMailOutline } from 'react-icons/io5';
-import { contactInfo } from '../Utils/data';
+import { 
+  IoLogoGithub, IoLogoLinkedin, IoLogoYoutube, 
+  IoCalendarOutline, IoMailOutline, IoCopyOutline, 
+  IoCheckmarkOutline, IoDocumentTextOutline 
+} from 'react-icons/io5';
+import { contactInfo, personalInfo } from '../Utils/data';
 import { useTheme } from '../context/ThemeContext';
+import { FiMapPin, FiClock } from 'react-icons/fi';
 
 const GetInTouch = () => {
   const { isDarkMode } = useTheme();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(contactInfo.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   const contactMethods = [
     {
       icon: <IoMailOutline className="w-6 h-6" />,
       label: 'Email',
       value: contactInfo.email,
-      link: `mailto:${contactInfo.email}`,
-      description: 'Drop me a line anytime'
+      action: 'mailto:' + contactInfo.email,
+      isExternal: true,
+      description: 'Drop me a direct email'
     },
     {
       icon: <IoCalendarOutline className="w-6 h-6" />,
       label: 'Schedule a Call',
-      value: 'Calendly',
-      link: contactInfo.scheduling,
-      description: 'Book a 30-minute chat'
-    },
-    {
-      icon: <IoLogoGithub className="w-6 h-6" />,
-      label: 'GitHub',
-      value: 'leonardegbaaibon',
-      link: contactInfo.github,
-      description: 'Check out my code'
+      value: 'Book 30-min on Calendly',
+      action: contactInfo.scheduling,
+      isExternal: true,
+      description: 'Discuss full-time or contract roles'
     },
     {
       icon: <IoLogoLinkedin className="w-6 h-6" />,
       label: 'LinkedIn',
-      value: 'leonard-egbaaibon',
-      link: contactInfo.linkedin,
-      description: 'Let\'s connect professionally'
+      value: '/in/leonard-egbaaibon',
+      action: contactInfo.linkedin,
+      isExternal: true,
+      description: 'Connect professionally'
+    },
+    {
+      icon: <IoLogoGithub className="w-6 h-6" />,
+      label: 'GitHub',
+      value: '@leonardegbaaibon',
+      action: contactInfo.github,
+      isExternal: true,
+      description: 'Explore open source code'
     },
     {
       icon: <IoLogoYoutube className="w-6 h-6" />,
       label: 'YouTube',
-      value: 'yor-dev',
-      link: contactInfo.youtube,
-      description: 'Watch my tutorials'
+      value: '@yor-dev',
+      action: contactInfo.youtube,
+      isExternal: true,
+      description: 'Watch engineering tutorials'
+    },
+    {
+      icon: <IoDocumentTextOutline className="w-6 h-6" />,
+      label: 'Curriculum Vitae',
+      value: 'Download Resume (PDF)',
+      action: personalInfo.resumeUrl,
+      isExternal: true,
+      description: 'Latest verified CV'
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  };
-
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 relative overflow-hidden bg-transparent">
+      {/* Ambient background blur */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-t from-blue-500/10 to-transparent blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            Whether you have a project in mind, want to collaborate, or just want to say hi,
-            I'd love to hear from you!
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/10 text-emerald-500 mb-3">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" /> Available for Opportunities
+          </div>
+          <h2 className="section-title">Let's Build Something Exceptional</h2>
+          <p className="section-subtitle">
+            Open to senior engineering roles, mobile architecture consultations, contract builds, or tech mentorship.
           </p>
+
+          {/* Quick Copy Email Action Box */}
+          <div className="inline-flex items-center gap-3 p-2 pl-4 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 mt-2">
+            <span className="text-xs sm:text-sm font-mono text-text-light dark:text-text-dark select-all">
+              {contactInfo.email}
+            </span>
+            <button
+              onClick={handleCopyEmail}
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-primary-500 text-white hover:bg-primary-600 transition-colors shadow-sm"
+            >
+              {copied ? (
+                <>
+                  <IoCheckmarkOutline className="text-sm" /> Copied!
+                </>
+              ) : (
+                <>
+                  <IoCopyOutline className="text-sm" /> Copy Email
+                </>
+              )}
+            </button>
+          </div>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
-        >
+        {/* Contact Links Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {contactMethods.map((method, index) => (
             <motion.a
               key={method.label}
-              href={method.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className={`p-6 rounded-xl ${
+              href={method.action}
+              target={method.isExternal ? "_blank" : "_self"}
+              rel={method.isExternal ? "noopener noreferrer" : ""}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              whileHover={{ y: -4, scale: 1.01 }}
+              className={`p-6 rounded-3xl transition-all duration-300 group ${
                 isDarkMode 
-                  ? 'bg-surface-dark hover:bg-surface-dark/80' 
-                  : 'bg-surface-light hover:bg-surface-light/80'
-              } transition-all duration-300 group`}
+                  ? 'bg-surface-dark/90 border border-white/10 hover:border-primary-500/40 shadow-lg' 
+                  : 'bg-white border border-gray-200/80 hover:border-primary-500/40 shadow-md'
+              } backdrop-blur-xl flex items-start gap-4`}
             >
-              <div className="flex items-start space-x-4">
-                <div className={`p-3 rounded-lg ${
-                  isDarkMode ? 'bg-background-dark' : 'bg-background-light'
-                } group-hover:text-primary-light transition-colors`}>
-                  {method.icon}
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-lg mb-1">{method.label}</h3>
-                  <p className="text-sm opacity-80 mb-2">{method.description}</p>
-                  <p className="text-sm font-medium group-hover:text-primary-light transition-colors">
-                    {method.value}
-                  </p>
-                </div>
+              <div className="p-3.5 rounded-2xl bg-primary-500/10 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-colors shrink-0">
+                {method.icon}
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-bold text-base text-text-light dark:text-text-dark mb-1">
+                  {method.label}
+                </h3>
+                <p className="text-xs text-text-mutedLight dark:text-text-mutedDark mb-2">
+                  {method.description}
+                </p>
+                <p className="text-xs sm:text-sm font-semibold text-primary-500 truncate group-hover:underline">
+                  {method.value}
+                </p>
               </div>
             </motion.a>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <p className="text-lg opacity-80">
-            Based in Nigeria • Available Worldwide
+        {/* Footer info & copyright */}
+        <div className="pt-12 border-t border-gray-200 dark:border-white/10 text-center text-xs sm:text-sm text-text-mutedLight dark:text-text-mutedDark space-y-2">
+          <p className="flex items-center justify-center gap-4 flex-wrap">
+            <span className="flex items-center gap-1.5">
+              <FiMapPin className="text-primary-500" /> Lagos, Nigeria • Worldwide Remote
+            </span>
+            <span>•</span>
+            <span className="flex items-center gap-1.5">
+              <FiClock className="text-primary-500" /> Fast Response (Within 24 Hours)
+            </span>
           </p>
-          <p className="text-sm mt-2 opacity-60">
-            Response time: Usually within 24 hours
+          <p className="pt-2">
+            © {new Date().getFullYear()} Leonard Egbaaibon. Engineered with React, Vite & Tailwind CSS.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
