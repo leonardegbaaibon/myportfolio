@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four directions for the portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --k:#14130F; --p:#F6F3EC; --s:#FFFFFF; --l:#DDD8CB; --g:#6C6760; --a:#C4562F; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--p); color:var(--k); font-family:Archivo,system-ui,sans-serif; font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .w { max-width:1080px; margin:0 auto; padding:52px 24px 80px; }
+  h1 { font-size:clamp(30px,4.6vw,46px); letter-spacing:-0.04em; margin:0 0 14px; font-weight:800; line-height:1.05; max-width:20ch; }
+  .intro { color:var(--g); max-width:66ch; margin:0 0 10px; }
+  .meta { font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--g); margin:22px 0 40px; padding-top:16px; border-top:1px solid var(--l); }
+  .v { display:grid; grid-template-columns:200px 1fr 210px; gap:26px; padding:26px 0; border-top:1px solid var(--l); align-items:start; }
+  .v:last-of-type { border-bottom:1px solid var(--l); }
+  .sw { border:1px solid var(--k); height:104px; display:grid; grid-template-columns:repeat(4,1fr); }
+  .sw i { display:block; }
+  .nmb { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--a); margin-top:9px; }
+  h2 { font-size:23px; letter-spacing:-0.03em; margin:0 0 4px; font-weight:800; }
+  .sub { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--g); margin-bottom:11px; }
+  .v p { margin:0 0 10px; color:var(--g); font-size:14px; max-width:56ch; }
+  .v ul { margin:10px 0 0; padding-left:17px; color:var(--g); font-size:13.5px; }
+  .v li { margin-bottom:3px; }
+  .go { display:flex; flex-direction:column; gap:8px; }
+  .go a { display:flex; justify-content:space-between; align-items:center; gap:10px; border:1px solid var(--k); background:var(--s); padding:10px 14px; text-decoration:none; color:var(--k); font-weight:600; font-size:14px; letter-spacing:-0.02em; }
+  .go a:hover { background:var(--k); color:var(--p); }
+  .go a em { font-style:normal; font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:400; opacity:.65; }
+  footer { margin-top:44px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--g); }
+  @media (max-width:860px){ .v{grid-template-columns:1fr;gap:16px;} .sw{height:64px;} }
+</style>
+</head>
+<body>
+<div class="w">
+
+  <h1>Four directions for the portfolio, and the dashboard that goes with each.</h1>
+  <p class="intro">
+    Static HTML and CSS, no framework, so the look can be judged before any of it is ported to React.
+    All eight pages use the real content from <code>src/Utils/data.js</code>: the same fourteen builds,
+    the same measured numbers, the same three named references.
+  </p>
+  <p class="intro">
+    The four are not four skins on one layout. They differ in typeface, in grid, and in how structure is
+    expressed: rules, alignment, hairlines, or outlines. Pick one, or say which parts of which.
+  </p>
+
+  <div class="meta">
+    Reference points: seyidev.com for the tactile editorial energy, impeccable.style for the refine
+    and simplify passes. Avoided throughout: glow and blur, purple-to-blue gradients, glassmorphism,
+    Inter, uppercase eyebrow labels stacked above oversized titles, em dashes in copy, and grids of
+    identical cards.
+  </div>
+
+  <!-- 01 -->
+  <div class="v">
+    <div>
+      <div class="sw">
+        <i style="background:#F7F4ED"></i><i style="background:#EEEADE"></i><i style="background:#AF3222"></i><i style="background:#16150F"></i>
+      </div>
+      <div class="nmb">01 / Instrument Serif + Newsreader + JetBrains Mono</div>
+    </div>
+    <div>
+      <h2>Broadsheet</h2>
+      <div class="sub">Editorial print · paper stock · oxide red · hairline rules</div>
+      <p>
+        Structure comes from a margin column and horizontal rules rather than boxes. Section numbers sit
+        beside the heading on the same baseline, the way a print sidenote does, so nothing reads as a
+        centred label above a giant title.
+      </p>
+      <ul>
+        <li>Work set as ruled entries with the measured result in a right rail</li>
+        <li>Method written as two-column prose with a column rule, not six cards</li>
+        <li>Dashboard is a ledger: dense ruled rows, bars drawn as measures</li>
+      </ul>
+    </div>
+    <div class="go">
+      <a href="01-broadsheet/index.html">Landing <em>index.html</em></a>
+      <a href="01-broadsheet/dashboard.html">Dashboard <em>ledger</em></a>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="v">
+    <div>
+      <div class="sw">
+        <i style="background:#141410"></i><i style="background:#1B1B15"></i><i style="background:#D98B2B"></i><i style="background:#8CA25C"></i>
+      </div>
+      <div class="nmb">02 / JetBrains Mono throughout</div>
+    </div>
+    <div>
+      <h2>Ledger</h2>
+      <div class="sub">Warm near-black · one typeface · flat amber · no glow anywhere</div>
+      <p>
+        The dark one, deliberately matte. Warm olive-black instead of blue-black, a single flat amber,
+        and not one gradient, blur or glow in the stylesheet. Monospaced end to end, so alignment does
+        the work borders usually do.
+      </p>
+      <ul>
+        <li>Work reads as a timestamped log with aligned key/value outcomes</li>
+        <li>Section dividers are rules that carry their own label</li>
+        <li>Dashboard is a three-column operations console with an activity stream</li>
+      </ul>
+    </div>
+    <div class="go">
+      <a href="02-ledger/index.html">Landing <em>index.html</em></a>
+      <a href="02-ledger/dashboard.html">Console <em>dashboard</em></a>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="v">
+    <div>
+      <div class="sw">
+        <i style="background:#FFFFFF"></i><i style="background:#E9E9E6"></i><i style="background:#FF4A00"></i><i style="background:#0B0B0A"></i>
+      </div>
+      <div class="nmb">03 / Archivo + IBM Plex Mono</div>
+    </div>
+    <div>
+      <h2>Datasheet</h2>
+      <div class="sub">Swiss industrial · visible 12-column grid · safety orange · small tight type</div>
+      <p>
+        Technical documentation rather than a brochure. The column rules stay visible, every section and
+        figure is numbered, and results sit in a fixed results column beside each item. The densest of
+        the four, and the most obviously engineer-made.
+      </p>
+      <ul>
+        <li>Work presented as numbered items with Fig. captions and a results table</li>
+        <li>Copy is short, declarative, and carries its own reference numbers</li>
+        <li>Dashboard is an instrument panel: gauges with tick scales, register table</li>
+      </ul>
+    </div>
+    <div class="go">
+      <a href="03-datasheet/index.html">Landing <em>index.html</em></a>
+      <a href="03-datasheet/dashboard.html">Dashboard <em>register</em></a>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="v">
+    <div>
+      <div class="sw">
+        <i style="background:#F4EEE1"></i><i style="background:#F0C23F"></i><i style="background:#C4562F"></i><i style="background:#667544"></i>
+      </div>
+      <div class="nmb">04 / Bricolage Grotesque + Fraunces + JetBrains Mono</div>
+    </div>
+    <div>
+      <h2>Workshop</h2>
+      <div class="sub">Tactile · 2px outlines · flat offset shadows · terracotta, butter, olive</div>
+      <p>
+        Closest in energy to the seyidev reference, with its own palette and typeface. Hard outlines and
+        flat drop shadows, no blur and no radius. Block sizes and colours vary down the page so it has
+        rhythm instead of a uniform grid.
+      </p>
+      <ul>
+        <li>Work blocks alternate between full, half and third width</li>
+        <li>Full-bleed colour bands separate sections instead of more cards</li>
+        <li>Dashboard is a shop-floor board with an uneven coloured scoreboard</li>
+      </ul>
+    </div>
+    <div class="go">
+      <a href="04-workshop/index.html">Landing <em>index.html</em></a>
+      <a href="04-workshop/dashboard.html">Dashboard <em>the board</em></a>
+    </div>
+  </div>
+
+  <footer>
+    Content source: src/Utils/data.js · Images: public/Image · Serve from the repo root so image paths resolve.
+  </footer>
+</div>
+</body>
+</html>

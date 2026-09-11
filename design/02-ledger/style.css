@@ -1,0 +1,229 @@
+/* ==========================================================================
+   VARIANT 02 — LEDGER
+   One typeface, monospaced, the whole way down. The page is a buffer.
+   Warm near-black rather than blue-black. Flat amber. No glow, no blur,
+   no gradient anywhere in this file, on purpose.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap');
+
+:root {
+  --void:   #141410;   /* warm near-black, a touch of olive in it */
+  --sunk:   #0E0E0B;
+  --panel:  #1B1B15;
+  --line:   #2C2C23;
+  --line-2: #3D3D31;
+  --bone:   #E9E4D4;   /* warm paper white */
+  --dim:    #918D7C;
+  --faint:  #5F5C51;
+  --amber:  #D98B2B;   /* flat, single accent */
+  --olive:  #8CA25C;   /* healthy / pass */
+  --rust:   #C05C3E;   /* attention */
+
+  --m: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ch: 13px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--bone);
+  font-family: var(--m);
+  font-size: var(--ch);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--amber); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 26px; }
+
+/* --- top bar -------------------------------------------------------------- */
+
+.bar {
+  border-bottom: 1px solid var(--line);
+  background: var(--sunk);
+  position: sticky; top: 0; z-index: 30;
+}
+.bar__in {
+  max-width: 1040px; margin: 0 auto; padding: 0 26px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 18px; height: 46px; flex-wrap: wrap;
+}
+.bar__id { color: var(--bone); font-weight: 700; letter-spacing: -0.01em; }
+.bar__id i { color: var(--faint); font-style: normal; font-weight: 400; }
+.bar nav { display: flex; gap: 20px; font-size: 12px; }
+.bar nav a { color: var(--dim); }
+.bar nav a:hover { color: var(--bone); text-decoration: none; }
+
+/* --- section scaffolding -------------------------------------------------- */
+
+/* A rule that carries its own label, drawn the way a divider comment looks
+   in a source file. No stacked uppercase eyebrow above the heading. */
+.div {
+  display: flex; align-items: center; gap: 14px;
+  margin: 66px 0 24px;
+  color: var(--faint);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+.div::before { content: '//'; color: var(--amber); }
+.div::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.div b { color: var(--dim); font-weight: 400; }
+
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.025em; margin: 0; line-height: 1.12; }
+
+.h-xl { font-size: clamp(30px, 5vw, 54px); }
+.h-lg { font-size: clamp(22px, 3vw, 32px); }
+.h-md { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+
+.amber { color: var(--amber); }
+.olive { color: var(--olive); }
+.dim   { color: var(--dim); }
+.faint { color: var(--faint); }
+
+p { margin: 0 0 16px; color: var(--dim); max-width: 78ch; }
+p strong { color: var(--bone); font-weight: 500; }
+
+/* --- hero ----------------------------------------------------------------- */
+
+.hero { padding: 70px 0 10px; }
+.hero .h-xl { max-width: 20ch; }
+.hero__lede { margin-top: 24px; font-size: 14px; max-width: 72ch; }
+
+.status {
+  display: inline-flex; align-items: center; gap: 9px;
+  border: 1px solid var(--line-2);
+  padding: 5px 11px;
+  font-size: 11px;
+  color: var(--dim);
+  margin-bottom: 26px;
+}
+.status i { width: 6px; height: 6px; background: var(--olive); display: block; }
+
+.cta { display: flex; gap: 9px; margin-top: 28px; flex-wrap: wrap; }
+.btn {
+  border: 1px solid var(--line-2);
+  padding: 9px 16px;
+  font-size: 12px;
+  color: var(--bone);
+  background: transparent;
+  font-family: var(--m);
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--bone); text-decoration: none; }
+.btn--amber { background: var(--amber); border-color: var(--amber); color: #14140F; font-weight: 700; }
+.btn--amber:hover { background: var(--bone); border-color: var(--bone); }
+
+/* --- readout table -------------------------------------------------------- */
+
+.readout { border: 1px solid var(--line); margin-top: 40px; }
+.readout__row {
+  display: grid;
+  grid-template-columns: 120px 1fr 190px;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.readout__row:last-child { border-bottom: none; }
+.readout__v {
+  font-size: 21px; font-weight: 800; color: var(--amber);
+  padding: 13px 16px; border-right: 1px solid var(--line);
+  letter-spacing: -0.02em;
+}
+.readout__k { padding: 13px 16px; font-size: 12.5px; color: var(--bone); }
+.readout__k span { color: var(--faint); }
+.readout__src {
+  padding: 13px 16px; font-size: 11px; color: var(--faint);
+  border-left: 1px solid var(--line); text-align: right;
+}
+
+/* --- log entries (the work) ----------------------------------------------- */
+
+.log { border-top: 1px solid var(--line); }
+.log__e {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 26px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.log__ts { color: var(--faint); font-size: 11px; line-height: 1.8; }
+.log__ts b { display: block; color: var(--amber); font-weight: 500; }
+.log__ts em { display: block; font-style: normal; color: var(--dim); margin-top: 8px; }
+
+.log__body .h-md { margin-bottom: 3px; }
+.log__body .h-md a { color: var(--bone); }
+.log__body .h-md a:hover { color: var(--amber); }
+.log__sig { font-size: 11px; color: var(--faint); margin-bottom: 13px; }
+.log__body p { font-size: 13px; margin-bottom: 12px; }
+
+/* Outcomes as aligned key/value lines, which is what a mono grid is good at. */
+.kv { border-top: 1px dashed var(--line-2); padding-top: 11px; margin-top: 14px; }
+.kv div { display: flex; gap: 12px; font-size: 12px; padding: 2px 0; }
+.kv dt { color: var(--olive); min-width: 74px; font-weight: 500; }
+.kv dd { margin: 0; color: var(--dim); }
+
+.tools { font-size: 11px; color: var(--faint); margin-top: 12px; }
+.tools::before { content: '$ '; color: var(--line-2); }
+
+/* --- method: annotated block ---------------------------------------------- */
+
+.notes { border-left: 2px solid var(--line-2); padding-left: 22px; }
+.notes section { padding: 0 0 24px; }
+.notes h4 { margin: 0 0 6px; font-size: 13.5px; font-weight: 700; color: var(--bone); letter-spacing: -0.01em; }
+.notes h4::before { content: '# '; color: var(--amber); font-weight: 400; }
+.notes p { font-size: 12.5px; margin: 0; max-width: 74ch; }
+
+/* --- references ----------------------------------------------------------- */
+
+.ref { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.ref:first-child { border-top: 1px solid var(--line); }
+.ref blockquote {
+  margin: 0 0 10px; padding-left: 20px;
+  border-left: 2px solid var(--amber);
+  color: var(--bone); font-size: 13.5px; font-weight: 300; line-height: 1.65;
+  max-width: 80ch;
+}
+.ref figcaption { font-size: 11px; color: var(--faint); padding-left: 22px; }
+
+/* --- contact -------------------------------------------------------------- */
+
+.links { border: 1px solid var(--line); }
+.links a {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 12px 16px; border-bottom: 1px solid var(--line);
+  color: var(--bone); font-size: 13px;
+}
+.links a:last-child { border-bottom: none; }
+.links a:hover { background: var(--panel); text-decoration: none; color: var(--amber); }
+.links a span { color: var(--faint); font-size: 11px; }
+
+.foot {
+  border-top: 1px solid var(--line);
+  margin-top: 70px; padding: 22px 0 60px;
+  font-size: 11px; color: var(--faint);
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+
+/* --- chrome --------------------------------------------------------------- */
+
+.jump {
+  position: fixed; right: 16px; bottom: 16px; z-index: 60;
+  display: flex; border: 1px solid var(--line-2); background: var(--sunk); font-size: 11px;
+}
+.jump a { padding: 7px 12px; border-right: 1px solid var(--line); color: var(--dim); }
+.jump a:last-child { border-right: none; }
+.jump a:hover { color: var(--bone); text-decoration: none; }
+.jump a[aria-current] { background: var(--amber); color: #14140F; font-weight: 700; }
+
+@media (max-width: 760px) {
+  .log__e { grid-template-columns: 1fr; gap: 10px; }
+  .readout__row { grid-template-columns: 1fr; }
+  .readout__v { border-right: none; border-bottom: 1px solid var(--line); }
+  .readout__src { border-left: none; text-align: left; padding-top: 0; }
+  .bar__in { height: auto; padding-top: 10px; padding-bottom: 10px; }
+}

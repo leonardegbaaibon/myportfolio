@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonard Egbaaibon, mobile and frontend engineer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <div class="hdr__id"><b>LE</b> Leonard Egbaaibon</div>
+    <nav>
+      <a href="#work">1.0 Work</a>
+      <a href="#method">2.0 Method</a>
+      <a href="#refs">3.0 References</a>
+      <a href="dashboard.html">4.0 Dashboard</a>
+      <a class="on" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="doc">
+
+  <div class="strip">
+    <span>Mobile &amp; frontend engineer <b>/</b> React Native, Kotlin, TypeScript <b>/</b> Lagos, Nigeria</span>
+    <span>Overlaps WAT, GMT, EST <b>/</b> <span class="avail">One seat open from October 2026</span></span>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="g12 hero">
+    <div class="hero__l">
+      <h1>Ten apps in production. Four years. <em>Every number on this page is measured.</em></h1>
+      <p class="hero__p">
+        I build mobile and web software for fintech, mobility and telematics, and I stay with it through
+        store review and the first three months after, which is where the interesting failures live.
+        <b>Six App Store submissions, eight on Play, five review rejections resolved.</b>
+      </p>
+      <div class="acts">
+        <a class="pri" href="https://calendly.com/legbaaibon">Book 30 min</a>
+        <a href="#work">Read the work</a>
+        <a href="../../public/Image/LeonardEgbaaibon2.pdf">CV (PDF)</a>
+        <a href="https://github.com/leonardegbaaibon">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero__r">
+      <div class="spec">
+        <div class="spec__r">
+          <div class="spec__k">Crash-free session rate<span>Swiift, first production release</span></div>
+          <div class="spec__v hl">99.2%</div>
+        </div>
+        <div class="spec__r">
+          <div class="spec__k">Monthly settlement volume<span>BlockEx.trade, four currencies</span></div>
+          <div class="spec__v hl">$70K+</div>
+        </div>
+        <div class="spec__r">
+          <div class="spec__k">Uptime, 10k+ txn/month<span>Supabase Edge backend</span></div>
+          <div class="spec__v">99.9%</div>
+        </div>
+        <div class="spec__r">
+          <div class="spec__k">Client memory reduction<span>WebSocket fan-out rewrite</span></div>
+          <div class="spec__v">−68%</div>
+        </div>
+        <div class="spec__r">
+          <div class="spec__k">False-positive alert reduction<span>Gumshoe acoustic DSP retune</span></div>
+          <div class="spec__v">−60%</div>
+        </div>
+        <div class="spec__r">
+          <div class="spec__k">Battery drain reduction<span>Kabu background geolocation</span></div>
+          <div class="spec__v">−42%</div>
+        </div>
+        <div class="spec__r">
+          <div class="spec__k">Builds tracked<span>10 mobile, 3 web, 1 native Android</span></div>
+          <div class="spec__v">14</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORK ================= -->
+  <section class="g12 sec" id="work">
+    <div class="sec__n">1.0</div>
+    <div class="sec__h">
+      <h2>Selected work, with the measurement beside it</h2>
+      <p>Six of fourteen builds. Reference numbers match the dashboard. Where source is under NDA the measurement is given instead.</p>
+    </div>
+  </section>
+
+  <table class="items">
+    <thead>
+      <tr>
+        <th style="width:62px">Ref</th>
+        <th>Description and engineering notes</th>
+        <th style="width:300px">Measured result</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr><td colspan="3">
+        <div class="item">
+          <div class="item__ref"><b>1.1</b>2025–26<br>Mobile</div>
+          <div class="item__b">
+            <h3><a href="https://www.getswiift.app">Swiift, everyday crypto wallet</a></h3>
+            <div class="item__meta">Lead Mobile Developer / Swiift Fintech / Live on App Store and Play Store / source under NDA</div>
+            <p>
+              Buy, spend, save, send, pay bills, and issue a virtual debit card without ever surfacing the
+              word blockchain. I led the build end to end and ran both store submissions.
+            </p>
+            <p>
+              <b>The constraint was network quality, not cryptography.</b> On Lagos mobile data a request can
+              hang for nine seconds and then succeed, so every write is idempotent and the wallet
+              reconciles on resume. The naive version double-spends.
+            </p>
+            <div class="parts">
+              <span>React Native</span><span>Expo</span><span>Redux Toolkit</span><span>TypeScript</span><span>Crypto rails</span><span>Stripe</span>
+            </div>
+          </div>
+          <div class="res">
+            <figure style="margin:0">
+              <img src="../../public/Image/project/swiift-card.png" alt="Swiift virtual card">
+              <figcaption>Fig. 1.1 · virtual card issuance screen</figcaption>
+            </figure>
+            <div class="res__r"><div class="res__v">99.2%</div><div class="res__d">crash-free sessions, first production release</div></div>
+            <div class="res__r"><div class="res__v">+25%</div><div class="res__d">active retention after onboarding rewrite</div></div>
+            <div class="res__r"><div class="res__v">&lt;2s</div><div class="res__d">median confirmation, down from about 6s</div></div>
+          </div>
+        </div>
+      </td></tr>
+
+      <tr><td colspan="3">
+        <div class="item">
+          <div class="item__ref"><b>1.2</b>2024–25<br>Web</div>
+          <div class="item__b">
+            <h3><a href="https://blockex.trade">BlockEx, B2B exchange and remittance</a></h3>
+            <div class="item__meta">Full-Stack Engineer / Blockspace Technologies / Live / public repository</div>
+            <p>
+              Trading frontend plus the entire serverless backend. Order book, settlement routines and
+              auth all run in Supabase Edge Functions, so nothing depends on a long-lived server holding
+              state between requests.
+            </p>
+            <p>
+              <b>The first WebSocket layer leaked a subscription on every symbol switch.</b> Three tabs open
+              for an afternoon and the tab was gone. The rewrite uses one multiplexed connection with
+              reference-counted topics.
+            </p>
+            <div class="parts">
+              <span>React</span><span>Next.js</span><span>Supabase</span><span>Edge Functions</span><span>WebSocket</span><span>Tailwind</span>
+            </div>
+          </div>
+          <div class="res">
+            <figure style="margin:0">
+              <img src="../../public/Image/blockex.png" alt="BlockEx trading interface">
+              <figcaption>Fig. 1.2 · order book and settlement view</figcaption>
+            </figure>
+            <div class="res__r"><div class="res__v">$70K+</div><div class="res__d">settled per month, 10k+ transactions</div></div>
+            <div class="res__r"><div class="res__v">99.9%</div><div class="res__d">uptime</div></div>
+            <div class="res__r"><div class="res__v">−68%</div><div class="res__d">client memory after fan-out rewrite</div></div>
+            <div class="res__r"><div class="res__v">−40%</div><div class="res__d">fraud attempts after wallet hardening</div></div>
+          </div>
+        </div>
+      </td></tr>
+
+      <tr><td colspan="3">
+        <div class="item">
+          <div class="item__ref"><b>1.3</b>2023–24<br>Native</div>
+          <div class="item__b">
+            <h3><a href="https://www.tsaron.com">Gumshoe, insurtech telematics</a></h3>
+            <div class="item__meta">Mobile &amp; Systems Engineer / Tsaron Technologies / Live / under NDA</div>
+            <p>
+              Native Kotlin. The app detects the acoustic signature of a driver using a phone at the wheel,
+              fuses it with motion sensor data, and assembles a tamper-evident packet for accident
+              reconstruction and automated subrogation claims.
+            </p>
+            <p>
+              <b>Running a DSP pipeline on a mid-range Android without cooking the battery is the whole
+              problem.</b> Most of the work went into narrowing the false-positive band: a passenger's
+              phone, a radio advert, a pothole at the wrong moment.
+            </p>
+            <div class="parts">
+              <span>Kotlin</span><span>Android native</span><span>DSP</span><span>Sensor fusion</span><span>FNOL automation</span>
+            </div>
+          </div>
+          <div class="res">
+            <figure style="margin:0">
+              <img src="../../public/Image/gumshoe.png" alt="Gumshoe telematics">
+              <figcaption>Fig. 1.3 · in-cabin distraction detection</figcaption>
+            </figure>
+            <div class="res__r"><div class="res__v">−60%</div><div class="res__d">false-positive distraction alerts</div></div>
+            <div class="res__r"><div class="res__v">Auto</div><div class="res__d">First Notice of Loss generated from telemetry</div></div>
+          </div>
+        </div>
+      </td></tr>
+
+      <tr><td colspan="3">
+        <div class="item">
+          <div class="item__ref"><b>1.4</b>2026<br>Mobile</div>
+          <div class="item__b">
+            <h3><a href="https://incenvia.com">Kabu, chauffeur marketplace</a></h3>
+            <div class="item__meta">Lead Mobile Engineer / Incenvia / submitted to both stores 04 Sep 2026 / in review</div>
+            <p>
+              Premium chauffeur and car rental marketplace for Lagos. I own the rider side: destination
+              entry, vehicle tier selection, driver hire, and live trip tracking.
+            </p>
+            <p>
+              <b>Continuous high-accuracy GPS on both devices is the fastest route to an uninstall.</b>
+              Adaptive sampling tied to trip state, with the subscription moved off the render path,
+              cut drain by roughly two fifths without losing dispatch precision.
+            </p>
+            <div class="parts">
+              <span>React Native</span><span>TypeScript</span><span>Redux</span><span>Google Maps</span><span>SQLite</span>
+            </div>
+          </div>
+          <div class="res">
+            <figure style="margin:0">
+              <img src="../../public/Image/project/kabu-splash.png" alt="Kabu app">
+              <figcaption>Fig. 1.4 · rider booking entry</figcaption>
+            </figure>
+            <div class="res__r"><div class="res__v">−42%</div><div class="res__d">battery drain over a full driver shift</div></div>
+            <div class="res__r"><div class="res__v">&lt;1s</div><div class="res__d">coordinate streaming to dispatch</div></div>
+            <div class="res__r"><div class="res__v">Offline</div><div class="res__d">ride state reconciles from SQLite on resume</div></div>
+          </div>
+        </div>
+      </td></tr>
+
+      <tr><td colspan="3">
+        <div class="item">
+          <div class="item__ref"><b>1.5</b>2025<br>Mobile</div>
+          <div class="item__b">
+            <h3><a href="https://nididrive.com">NidiDrive, transit and logistics</a></h3>
+            <div class="item__meta">Mobile Developer / Aug 2025 to Nov 2025 / Live</div>
+            <p>
+              Brought in to fix a slow, crashing dispatch app. Map clustering, a state refactor, and moving
+              location subscriptions out of the component tree did most of it. Live tracking and push
+              alerts shipped only once the app was stable enough to deserve them.
+            </p>
+            <div class="parts">
+              <span>React Native</span><span>TypeScript</span><span>Firebase</span><span>Google Maps</span><span>Push</span>
+            </div>
+          </div>
+          <div class="res">
+            <figure style="margin:0">
+              <img src="../../public/Image/Car.png" alt="NidiDrive">
+              <figcaption>Fig. 1.5 · dispatch and live tracking</figcaption>
+            </figure>
+            <div class="res__r"><div class="res__v">−40%</div><div class="res__d">crash rate</div></div>
+            <div class="res__r"><div class="res__v">−35%</div><div class="res__d">cold start time</div></div>
+            <div class="res__r"><div class="res__v">+20%</div><div class="res__d">daily active users</div></div>
+          </div>
+        </div>
+      </td></tr>
+
+      <tr><td colspan="3">
+        <div class="item">
+          <div class="item__ref"><b>1.6</b>2023<br>Web</div>
+          <div class="item__b">
+            <h3><a href="https://itspaydai.com">PayDai, commission engine</a></h3>
+            <div class="item__meta">Frontend Engineer / ItsPaydai / Completed</div>
+            <p>
+              Multi-tier sales commission reconciliation with automated Stripe and PayPal batch payouts.
+              Reps watch their money land on a live channel instead of emailing finance to ask. Every
+              disbursement carries a full audit trail.
+            </p>
+            <div class="parts">
+              <span>React</span><span>TypeScript</span><span>Redux</span><span>Stripe</span><span>PayPal</span><span>WebSockets</span>
+            </div>
+          </div>
+          <div class="res">
+            <figure style="margin:0">
+              <img src="../../public/Image/itspaydai.png" alt="PayDai">
+              <figcaption>Fig. 1.6 · payout tracking dashboard</figcaption>
+            </figure>
+            <div class="res__r"><div class="res__v">−75%</div><div class="res__d">payment processing time</div></div>
+            <div class="res__r"><div class="res__v">Full</div><div class="res__d">ledger auditability per disbursement</div></div>
+          </div>
+        </div>
+      </td></tr>
+
+    </tbody>
+  </table>
+
+  <!-- ================= METHOD ================= -->
+  <section class="g12 sec" id="method">
+    <div class="sec__n">2.0</div>
+    <div class="sec__h">
+      <h2>Operating notes</h2>
+      <p>Six practices that produced the numbers above, written as instructions rather than values.</p>
+    </div>
+  </section>
+
+  <div class="caps row">
+    <div>
+      <h4 data-n="2.1">Test on the slow device</h4>
+      <p>A mid-range Android stays in the loop from day one. Simulators lie about battery, thermal throttling and network. Both the Kabu battery result and the NidiDrive load-time result came from the cheap phone.</p>
+    </div>
+    <div>
+      <h4 data-n="2.2">Assume the connection drops</h4>
+      <p>Idempotent writes, a reconciliation pass on resume, and never letting a spinner be the only state a screen can hold. This is the normal case in the markets these apps ship to, not an edge case.</p>
+    </div>
+    <div>
+      <h4 data-n="2.3">Instrument before optimising</h4>
+      <p>Sentry, crash grouping and a small set of funnel events go in first. The 68% memory result came from a heap snapshot. Without a measurement, performance work is decoration.</p>
+    </div>
+    <div>
+      <h4 data-n="2.4">Budget for store review</h4>
+      <p>Provisioning, phased rollout, privacy manifests, rejections. Six Apple submissions and eight on Play means I plan around review rather than discover it in week ten.</p>
+    </div>
+    <div>
+      <h4 data-n="2.5">Design in the same loop</h4>
+      <p>Figma before the editor, tokens in the repository so the two do not drift. Most measured retention gains came from reworking a flow, not adding a screen.</p>
+    </div>
+    <div>
+      <h4 data-n="2.6">Write the handover early</h4>
+      <p>Contracts end. Mine end with an architecture note, a deployment runbook, and the next three things I would do in priority order. Talstrike V2 was scoped that way before handover.</p>
+    </div>
+  </div>
+
+  <!-- ================= REFERENCES ================= -->
+  <section class="g12 sec" id="refs">
+    <div class="sec__n">3.0</div>
+    <div class="sec__h">
+      <h2>References</h2>
+      <p>Three engineers I worked with directly. Profiles are linked so the claim is checkable.</p>
+    </div>
+  </section>
+
+  <div class="quotes row">
+    <figure>
+      <blockquote>“Leonard is a mobile and frontend maestro who effortlessly transforms ambitious product specs into fast, resilient and scalable applications. His attention to UX micro-details and architecture is world-class.”</blockquote>
+      <figcaption>Elvis Udoh<br>Engineering Lead<br><a href="https://www.linkedin.com/in/elvis-udoh/">linkedin.com/in/elvis-udoh</a></figcaption>
+    </figure>
+    <figure>
+      <blockquote>“A creative powerhouse across both web and mobile engineering. Leonard consistently delivers solutions blending sleek aesthetics with robust backend integration. His fintech and blockchain builds have been stellar.”</blockquote>
+      <figcaption>Opeyemi Abiodun<br>Senior Fullstack Engineer<br><a href="https://www.linkedin.com/in/opeyemi-abiodun-aa327920a/">linkedin.com/in/opeyemi-abiodun</a></figcaption>
+    </figure>
+    <figure>
+      <blockquote>“Leonard's expertise in React Native, Kotlin and modern UI engineering is top-tier. He has an exceptional ability to tackle complex performance problems while keeping a laser focus on user delight.”</blockquote>
+      <figcaption>Oluwafemi Ogunnote<br>Mobile Solutions Architect<br><a href="https://www.linkedin.com/in/oluwafemi-ogunnote-76207a151/">linkedin.com/in/oluwafemi-ogunnote</a></figcaption>
+    </figure>
+  </div>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="g12 sec" id="contact">
+    <div class="sec__n">4.0</div>
+    <div class="sec__h">
+      <h2>Contact and availability</h2>
+      <p>Mobile builds, performance rescues, payments integrations. A reply within one working day, with either a plan or a pointer to someone better suited.</p>
+    </div>
+  </section>
+
+  <div class="contact">
+    <div class="cl">
+      <a href="mailto:legbaaibon@gmail.com"><em>Email</em>legbaaibon@gmail.com</a>
+      <a href="https://calendly.com/legbaaibon"><em>Call</em>calendly.com/legbaaibon, 30 minutes</a>
+      <a href="https://github.com/leonardegbaaibon"><em>Code</em>github.com/leonardegbaaibon</a>
+      <a href="https://www.linkedin.com/in/leonard-egbaaibon/"><em>History</em>linkedin.com/in/leonard-egbaaibon</a>
+      <a href="https://www.youtube.com/@yor-dev"><em>Teaching</em>youtube.com/@yor-dev</a>
+      <a href="dashboard.html"><em>Dashboard</em>All 14 builds, engagement timeline</a>
+    </div>
+    <div>
+      <h4 style="margin:0 0 8px;font-size:14px;font-weight:700;letter-spacing:-.02em">4.1 Mentorship</h4>
+      <p style="margin:0 0 14px;font-size:13px;color:var(--g60)">
+        I run sessions on React Native architecture and state management, modern frontend and web
+        performance, and taking a Figma file through to working React Native. Intermediate to advanced,
+        one to one or small group.
+      </p>
+      <p style="margin:0 0 14px;font-size:13px;color:var(--g60)">
+        Sessions use production code from the builds above, including the crash triage and profiling
+        work, rather than toy examples.
+      </p>
+      <h4 style="margin:0 0 8px;font-size:14px;font-weight:700;letter-spacing:-.02em">4.2 Education</h4>
+      <p style="margin:0;font-size:13px;color:var(--g60)">
+        University of Lagos, Technology Education, Automobile and Mechanical Technology. Jan 2021 to
+        Feb 2026. Materials science, AutoCAD, mechatronics and control systems, electrical circuits,
+        applied mechanics.
+      </p>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>Leonard Egbaaibon / Lagos, Nigeria / legbaaibon@gmail.com / set in Archivo and IBM Plex Mono</span>
+    <span>Variant 03 / Datasheet / rev. Sep 2026</span>
+  </footer>
+
+</div>
+
+<nav class="jump">
+  <a href="index.html" aria-current="page">Landing</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="../index.html">Variants</a>
+</nav>
+
+</body>
+</html>
