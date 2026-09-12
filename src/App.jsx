@@ -1,64 +1,53 @@
-import React, { useState } from 'react';
-import { ThemeProvider } from './context/ThemeContext';
-import VariantSwitcher from './components/variants/VariantSwitcher';
+import { useEffect, useState } from 'react';
 
-// Variant 1: Editorial Engineer (Seyi Inspo)
-import Variant1Editorial from './components/variants/Variant1Editorial';
-import Variant1Dashboard from './components/variants/Variant1Dashboard';
+import TopNav from './components/workshop/TopNav';
+import Hero from './components/workshop/Hero';
+import SelectedWork from './components/workshop/SelectedWork';
+import HowIWork from './components/workshop/HowIWork';
+import References from './components/workshop/References';
+import Contact from './components/workshop/Contact';
+import Dashboard from './components/workshop/Dashboard';
+import ViewSwitch from './components/workshop/ViewSwitch';
 
-// Variant 2: Systems Architect (Impeccable Brutalist)
-import Variant2Terminal from './components/variants/Variant2Terminal';
-import Variant2Dashboard from './components/variants/Variant2Dashboard';
+/**
+ * Two views, switched on the hash so both are linkable and the back button
+ * works. In-page anchors (#work, #how) stay on the landing page; only
+ * `#/dashboard` changes the view.
+ */
+const readView = () => (window.location.hash.startsWith('#/dashboard') ? 'dashboard' : 'landing');
 
-// Variant 3: Venture Studio & Product Lab (Tactile Simulator)
-import Variant3ProductLab from './components/variants/Variant3ProductLab';
-import Variant3Dashboard from './components/variants/Variant3Dashboard';
-
-// Variant 4: Minimalist Artisan Ledger (Narrative Craft)
-import Variant4ArtisanLedger from './components/variants/Variant4ArtisanLedger';
-import Variant4Dashboard from './components/variants/Variant4Dashboard';
+const Landing = () => (
+  <>
+    <TopNav />
+    <Hero />
+    <SelectedWork />
+    <HowIWork />
+    <References />
+    <Contact />
+  </>
+);
 
 const App = () => {
-  const [currentVariant, setCurrentVariant] = useState('editorial');
-  const [viewMode, setViewMode] = useState('landing'); // 'landing' | 'dashboard'
+  const [view, setView] = useState(readView);
 
-  const renderActiveView = () => {
-    switch (currentVariant) {
-      case 'editorial':
-        return viewMode === 'landing' ? <Variant1Editorial /> : <Variant1Dashboard />;
-      case 'terminal':
-        return viewMode === 'landing' ? <Variant2Terminal /> : <Variant2Dashboard />;
-      case 'productlab':
-        return viewMode === 'landing' ? <Variant3ProductLab /> : <Variant3Dashboard />;
-      case 'artisan':
-        return viewMode === 'landing' ? <Variant4ArtisanLedger /> : <Variant4Dashboard />;
-      default:
-        return <Variant1Editorial />;
-    }
-  };
+  useEffect(() => {
+    const onHashChange = () => setView(readView());
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  // Switching views should start at the top, not keep the previous scroll.
+  useEffect(() => {
+    if (!window.location.hash.includes('#/')) return;
+    window.scrollTo(0, 0);
+  }, [view]);
 
   return (
-    <div className="relative min-h-screen pb-24">
-      {/* Active Screen Render */}
-      {renderActiveView()}
-
-      {/* Floating Variant & View Mode Switcher */}
-      <VariantSwitcher 
-        currentVariant={currentVariant}
-        onSelectVariant={setCurrentVariant}
-        viewMode={viewMode}
-        onToggleViewMode={setViewMode}
-      />
+    <div className="min-h-screen bg-cream text-left">
+      {view === 'dashboard' ? <Dashboard /> : <Landing />}
+      <ViewSwitch view={view} />
     </div>
   );
 };
 
-const AppWrapper = () => {
-  return (
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  );
-};
-
-export default AppWrapper;
+export default App;

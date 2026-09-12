@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Register · Leonard Egbaaibon</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="ui">
+
+  <!-- ================= NAV ================= -->
+  <aside class="nav">
+    <div class="nav__id"><b>LE</b> Build register</div>
+
+    <h5>4.1 Register</h5>
+    <a href="#" aria-current="page"><i>01</i><span>All builds</span><em>14</em></a>
+    <a href="#"><i>02</i><span>Engagements</span><em>10</em></a>
+    <a href="#"><i>03</i><span>Measured results</span><em>31</em></a>
+    <a href="#"><i>04</i><span>Store submissions</span><em>14</em></a>
+
+    <h5>4.2 Surface</h5>
+    <a href="#"><i>A</i><span>Mobile</span><em>10</em></a>
+    <a href="#"><i>B</i><span>Web</span><em>3</em></a>
+    <a href="#"><i>C</i><span>Android native</span><em>1</em></a>
+
+    <h5>4.3 Stage</h5>
+    <a href="#"><i>L</i><span>Live</span><em>9</em></a>
+    <a href="#"><i>R</i><span>In review</span><em>1</em></a>
+    <a href="#"><i>D</i><span>In development</span><em>1</em></a>
+    <a href="#"><i>C</i><span>Completed</span><em>3</em></a>
+
+    <h5>4.4 Domain</h5>
+    <a href="#"><i>F</i><span>Fintech</span><em>6</em></a>
+    <a href="#"><i>M</i><span>Mobility</span><em>3</em></a>
+    <a href="#"><i>T</i><span>Telematics, IoT</span><em>2</em></a>
+    <a href="#"><i>K</i><span>Marketplace</span><em>3</em></a>
+
+    <h5>Elsewhere</h5>
+    <a href="index.html"><i>↖</i><span>Landing page</span><em></em></a>
+    <a href="../index.html"><i>↖</i><span>All variants</span><em></em></a>
+  </aside>
+
+  <!-- ================= BOARD ================= -->
+  <main class="board">
+
+    <div class="board__top">
+      <div>
+        <h1>Build register</h1>
+        <p>14 entries / 2022–2026 / last write: Kabu submitted for store review, 04 Sep 2026</p>
+      </div>
+      <div class="filters">
+        <button aria-pressed="true">Complexity</button>
+        <button aria-pressed="false">Recent</button>
+        <button aria-pressed="false">Domain</button>
+      </div>
+    </div>
+
+    <!-- gauges -->
+    <section class="gauges">
+      <div>
+        <div class="ref">G.01</div>
+        <div class="v hl">99.2%</div>
+        <div class="k">Crash-free rate</div>
+        <div class="n">Swiift / first prod release</div>
+        <div class="ticks"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="hi"></i></div>
+      </div>
+      <div>
+        <div class="ref">G.02</div>
+        <div class="v hl">$70K</div>
+        <div class="k">Settled per month</div>
+        <div class="n">BlockEx / 4 currencies</div>
+        <div class="ticks"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="hi"></i><i></i><i></i></div>
+      </div>
+      <div>
+        <div class="ref">G.03</div>
+        <div class="v">99.9%</div>
+        <div class="k">Backend uptime</div>
+        <div class="n">Supabase Edge / 10k+ txn</div>
+        <div class="ticks"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+      </div>
+      <div>
+        <div class="ref">G.04</div>
+        <div class="v">14</div>
+        <div class="k">Builds tracked</div>
+        <div class="n">10 mobile / 3 web / 1 native</div>
+        <div class="ticks"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+      <div>
+        <div class="ref">G.05</div>
+        <div class="v">4.6<span style="font-size:14px">y</span></div>
+        <div class="k">In production code</div>
+        <div class="n">Feb 2022 → Sep 2026</div>
+        <div class="ticks"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <div class="split">
+
+      <!-- ---------- left column ---------- -->
+      <div class="col-a">
+
+        <section class="pn">
+          <div class="pn__h">
+            <h2 data-ref="T.01">Every build, ranked by complexity</h2>
+            <span>Complexity: concurrency, device constraint, value handled. My own scale, 0–100.</span>
+          </div>
+          <table class="reg">
+            <thead>
+              <tr>
+                <th style="width:44px">Ref</th>
+                <th>Build</th>
+                <th class="hide-sm">Role</th>
+                <th>Stage</th>
+                <th class="hide-sm">Year</th>
+                <th class="r">Complexity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rf">1.01</td>
+                <td class="nm">Glamorgram<span>Salon scheduling, Stripe checkout</span></td>
+                <td class="mo hide-sm">Mobile Engineer</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2026</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f hi" style="width:98%"></i></span><b>98</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.02</td>
+                <td class="nm">Talstrike<span>Athlete video reels, scout pipeline</span></td>
+                <td class="mo hide-sm">Mobile Solutions</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2026</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f hi" style="width:97%"></i></span><b>97</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.03</td>
+                <td class="nm">NidiDrive<span>Dispatch, geofencing, push alerts</span></td>
+                <td class="mo hide-sm">Mobile Developer</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2025</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f hi" style="width:96%"></i></span><b>96</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.04</td>
+                <td class="nm">Kabu<span>Chauffeur marketplace, live trips</span></td>
+                <td class="mo hide-sm">Lead Mobile Eng.</td>
+                <td><span class="code code--rev">IN REVIEW</span></td>
+                <td class="mo hide-sm">2026</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f hi" style="width:95%"></i></span><b>95</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.05</td>
+                <td class="nm">Swiftpoint<span>Bills, airtime, merchant checkout</span></td>
+                <td class="mo hide-sm">Lead Mobile Dev.</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2025</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:95%"></i></span><b>95</b></span></td>
+              </tr>
+              <tr class="on">
+                <td class="rf">1.06</td>
+                <td class="nm">Swiift<span>Everyday crypto wallet, virtual cards</span></td>
+                <td class="mo hide-sm">Lead Mobile Dev.</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2025–26</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:94%"></i></span><b>94</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.07</td>
+                <td class="nm">BlockEx<span>B2B exchange, Supabase Edge backend</span></td>
+                <td class="mo hide-sm">Full-Stack Eng.</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2024–25</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:93%"></i></span><b>93</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.08</td>
+                <td class="nm">Gumshoe<span>Kotlin telematics, acoustic DSP</span></td>
+                <td class="mo hide-sm">Mobile &amp; Systems</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2023–24</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:93%"></i></span><b>93</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.09</td>
+                <td class="nm">Buildsure<span>Proptech listings, contract generation</span></td>
+                <td class="mo hide-sm">Mobile Systems</td>
+                <td><span class="code code--dev">IN DEV</span></td>
+                <td class="mo hide-sm">2026</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:92%"></i></span><b>92</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.10</td>
+                <td class="nm">CryptoLens<span>Market analytics, WS price ticks</span></td>
+                <td class="mo hide-sm">Frontend Dev.</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2025</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:89%"></i></span><b>89</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.11</td>
+                <td class="nm">PayDai<span>Commission engine, Stripe and PayPal</span></td>
+                <td class="mo hide-sm">Frontend Eng.</td>
+                <td><span class="code">COMPLETE</span></td>
+                <td class="mo hide-sm">2024</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:88%"></i></span><b>88</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.12</td>
+                <td class="nm">Powerplay<span>BLE lighting control, energy telemetry</span></td>
+                <td class="mo hide-sm">IoT Mobile Eng.</td>
+                <td><span class="code">COMPLETE</span></td>
+                <td class="mo hide-sm">2025</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:87%"></i></span><b>87</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.13</td>
+                <td class="nm">Proptibaank<span>Fractional real estate staking</span></td>
+                <td class="mo hide-sm">Mobile Engineer</td>
+                <td><span class="code">COMPLETE</span></td>
+                <td class="mo hide-sm">2024</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:86%"></i></span><b>86</b></span></td>
+              </tr>
+              <tr>
+                <td class="rf">1.14</td>
+                <td class="nm">Empirestar<span>Live audition streaming, voting</span></td>
+                <td class="mo hide-sm">Mobile Developer</td>
+                <td><span class="code code--live">LIVE</span></td>
+                <td class="mo hide-sm">2025</td>
+                <td class="r"><span class="mtr"><span class="mtr__t"><i class="mtr__f" style="width:85%"></i></span><b>85</b></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="pn">
+          <div class="pn__h">
+            <h2 data-ref="T.02">Entry 1.06 expanded</h2>
+            <span>Swiift, everyday crypto wallet</span>
+          </div>
+          <div class="dtl">
+            <div>
+              <h3>Swiift</h3>
+              <div class="mt">Lead Mobile Developer / Jun 2025 → Jan 2026 / live on both stores / source under NDA</div>
+              <p>
+                Buy, spend, save, send, pay bills, issue a virtual debit card. The brief was to hide the
+                blockchain entirely, which is mostly a state-consistency problem rather than a crypto one.
+              </p>
+              <p>
+                Every write is idempotent and the wallet reconciles on resume, because on Lagos mobile
+                data a request can hang for nine seconds and then succeed. The naive version double-spends.
+              </p>
+              <div class="parts" style="border-top:1px solid var(--g10);padding-top:9px">
+                <span>React Native</span><span>Expo</span><span>Redux Toolkit</span><span>TypeScript</span><span>Stripe</span><span>Crypto rails</span>
+              </div>
+            </div>
+            <div>
+              <table>
+                <tr><td>99.2%</td><td>crash-free sessions held through the first production release</td></tr>
+                <tr><td>+25%</td><td>active retention after the onboarding and funding rewrite</td></tr>
+                <tr><td>&lt;2s</td><td>median transaction confirmation, down from about 6s</td></tr>
+                <tr><td>KYC</td><td>automated, with instant virtual card issuance on approval</td></tr>
+                <tr><td>2 / 2</td><td>Apple review rejections resolved, both privacy manifest</td></tr>
+                <tr><td>4 cur.</td><td>multi-currency wallet funding and in-app conversion</td></tr>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ---------- right column ---------- -->
+      <div>
+        <section class="pn">
+          <div class="pn__h"><h2 data-ref="H.01">Engagement history</h2><span>10 entries</span></div>
+          <div class="hist">
+            <div class="hist__r"><div class="hist__d">2026.03<br>present</div><div class="hist__c"><b>Incenvia</b><span>Software Engineer, part time. Kabu rider flow, live trip tracking.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2026.02<br>present</div><div class="hist__c"><b>Baye Capital</b><span>Mobile Engineer. Buildsure proptech, listings, maps, scheduling.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2026.06<br>2026.08</div><div class="hist__c"><b>Talstrike</b><span>Contract. Stability fixes, V2 video pipeline scope.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2026</div><div class="hist__c"><b>Glamorgram</b><span>Mobile Engineer. Booking, calendar sync, Stripe collection.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2025.06<br>2026.01</div><div class="hist__c"><b>Swiift</b><span>Software Developer. Led the wallet build and both store launches.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2025.08<br>2025.11</div><div class="hist__c"><b>NidiDrive</b><span>Contract. Crash rate −40%, cold start −35%.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2024.11<br>2025.04</div><div class="hist__c"><b>Blockspace</b><span>Frontend plus Supabase Edge backend for BlockEx.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2023.11<br>2024.08</div><div class="hist__c"><b>Tsaron</b><span>Kotlin telematics, acoustic DSP, subrogation claims.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2023.02<br>2023.09</div><div class="hist__c"><b>ItsPaydai</b><span>Commission engine, Stripe and PayPal payout automation.</span></div></div>
+            <div class="hist__r"><div class="hist__d">2022.02<br>2023.01</div><div class="hist__c"><b>MO Group</b><span>Tübingen, remote. Proptibaank fractional real estate.</span></div></div>
+          </div>
+        </section>
+
+        <section class="pn">
+          <div class="pn__h"><h2 data-ref="D.01">Stack coverage</h2><span>Share of 14 builds</span></div>
+          <div class="rows">
+            <div><span class="lb">TypeScript</span><span class="vl">12/14</span><span class="gg"><i style="width:86%"></i></span></div>
+            <div><span class="lb">React Native, Expo</span><span class="vl">11/14</span><span class="gg"><i style="width:79%"></i></span></div>
+            <div><span class="lb">Redux Toolkit</span><span class="vl">10/14</span><span class="gg"><i style="width:71%"></i></span></div>
+            <div><span class="lb">Payments rails</span><span class="vl">6/14</span><span class="gg"><i style="width:43%"></i></span></div>
+            <div><span class="lb">Maps, geolocation</span><span class="vl">3/14</span><span class="gg"><i style="width:21%"></i></span></div>
+            <div><span class="lb">Kotlin, native</span><span class="vl">2/14</span><span class="gg"><i style="width:14%"></i></span></div>
+            <div><span class="lb">Supabase, edge</span><span class="vl">2/14</span><span class="gg"><i style="width:14%"></i></span></div>
+          </div>
+        </section>
+
+        <section class="pn">
+          <div class="pn__h"><h2 data-ref="S.01">Store record</h2><span>Apple / Google</span></div>
+          <div class="rows">
+            <div><span class="lb">App Store submissions</span><span class="vl">6</span></div>
+            <div><span class="lb">Play Store submissions</span><span class="vl">8</span></div>
+            <div><span class="lb">Currently in review</span><span class="vl">1</span></div>
+            <div><span class="lb">Rejections resolved</span><span class="vl">5</span></div>
+            <div><span class="lb">Still live today</span><span class="vl">9</span></div>
+          </div>
+        </section>
+
+        <section class="pn">
+          <div class="pn__h"><h2 data-ref="A.01">Availability</h2><span>Sep 2026</span></div>
+          <div class="rows">
+            <div><span class="lb">Open seats</span><span class="vl" style="color:var(--orange)">1</span></div>
+            <div><span class="lb">From</span><span class="vl">Oct 2026</span></div>
+            <div><span class="lb">Overlap</span><span class="vl">WAT/GMT/EST</span></div>
+            <div><span class="lb">Shape</span><span class="vl">Contract, FT</span></div>
+          </div>
+          <div style="padding:10px 16px 14px">
+            <a class="code code--rev" style="text-decoration:none;display:inline-block;padding:6px 10px" href="https://calendly.com/legbaaibon">BOOK 30 MIN →</a>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<nav class="jump">
+  <a href="index.html">Landing</a>
+  <a href="dashboard.html" aria-current="page">Dashboard</a>
+  <a href="../index.html">Variants</a>
+</nav>
+
+</body>
+</html>

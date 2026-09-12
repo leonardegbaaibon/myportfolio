@@ -1,0 +1,152 @@
+/* ==========================================================================
+   VARIANT 04 — WORKSHOP / DASHBOARD
+   A shop-floor board. Blocks are different sizes and different colours on
+   purpose; the table underneath is plain so the page has somewhere to rest.
+   ========================================================================== */
+
+.desk { display: grid; grid-template-columns: 232px 1fr; min-height: 100vh; }
+
+/* --- side ----------------------------------------------------------------- */
+
+.side {
+  border-right: var(--edge);
+  background: var(--sheet);
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding-bottom: 30px;
+}
+.side__id {
+  padding: 14px 18px; border-bottom: var(--edge);
+  font-weight: 800; font-size: 16px; letter-spacing: -0.03em;
+  background: var(--butter);
+}
+.side__id span { display: block; font-family: var(--mono); font-size: 10.5px; font-weight: 400; margin-top: 3px; }
+.side h5 {
+  margin: 18px 18px 7px;
+  font-family: var(--mono); font-size: 10px; color: var(--faint); font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.side a {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  margin: 0 12px 5px; padding: 6px 10px;
+  text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: -0.02em;
+  border: 2px solid transparent;
+}
+.side a em { font-style: normal; font-family: var(--mono); font-size: 11px; font-weight: 400; color: var(--faint); }
+.side a:hover { border-color: var(--ink); }
+.side a[aria-current] { background: var(--clay); color: var(--sheet); border-color: var(--ink); box-shadow: var(--drop-sm); }
+.side a[aria-current] em { color: rgba(255,251,243,.75); }
+
+/* --- floor ---------------------------------------------------------------- */
+
+.floor { padding: 0 26px 60px; min-width: 0; background: var(--cream); }
+
+.floor__top {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 16px; padding: 20px 0 16px; border-bottom: var(--edge); flex-wrap: wrap;
+}
+.floor__top h1 { font-size: 27px; letter-spacing: -0.04em; }
+.floor__top p { margin: 5px 0 0; font-family: var(--mono); font-size: 11.5px; color: var(--soft); }
+
+.switch { display: flex; border: var(--edge); box-shadow: var(--drop-sm); background: var(--sheet); }
+.switch button {
+  font-family: var(--disp); font-weight: 700; font-size: 12.5px; letter-spacing: -0.02em;
+  background: transparent; border: none; border-right: var(--edge);
+  padding: 8px 13px; cursor: pointer; color: var(--ink);
+}
+.switch button:last-child { border-right: none; }
+.switch button[aria-pressed="true"] { background: var(--ink); color: var(--sheet); }
+
+/* Big uneven scoreboard, coloured, not four identical white cards. */
+.score { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 16px; margin: 24px 0 28px; }
+.score > div { border: var(--edge); box-shadow: var(--drop); padding: 18px; background: var(--sheet); }
+.score > div:nth-child(1) { background: var(--clay); color: var(--sheet); }
+.score > div:nth-child(3) { background: var(--sky); }
+.score > div:nth-child(4) { background: var(--butter); }
+.score .v { font-size: 34px; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
+.score > div:nth-child(1) .v { font-size: 52px; }
+.score .k { font-size: 13.5px; font-weight: 700; margin-top: 9px; letter-spacing: -0.02em; }
+.score .s { font-family: var(--mono); font-size: 10.5px; margin-top: 4px; opacity: .74; line-height: 1.45; }
+
+.slab { border: var(--edge); background: var(--sheet); box-shadow: var(--drop); margin-bottom: 26px; }
+.slab__h {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 12px 18px; border-bottom: var(--edge); flex-wrap: wrap; background: var(--cream);
+}
+.slab__h h2 { font-size: 17px; letter-spacing: -0.03em; }
+.slab__h span { font-family: var(--mono); font-size: 11px; color: var(--soft); }
+
+/* --- table ---------------------------------------------------------------- */
+
+.board { width: 100%; border-collapse: collapse; font-size: 14px; }
+.board th {
+  font-family: var(--mono); font-size: 10px; font-weight: 500; color: var(--faint);
+  text-align: left; padding: 9px 16px; border-bottom: var(--edge); letter-spacing: 0.03em;
+}
+.board td { padding: 10px 16px; border-bottom: 1.5px solid #E4DCCC; vertical-align: middle; }
+.board tr:last-child td { border-bottom: none; }
+.board tr:hover td { background: var(--cream); }
+.board tr.pick td { background: var(--butter); }
+.board .no { font-family: var(--mono); font-size: 11px; color: var(--faint); }
+.board .nm { font-weight: 700; letter-spacing: -0.025em; }
+.board .nm span { display: block; font-weight: 400; font-size: 12.5px; color: var(--soft); letter-spacing: 0; }
+.board .ro { font-family: var(--mono); font-size: 11px; color: var(--soft); white-space: nowrap; }
+.board .r { text-align: right; }
+
+.gauge { display: inline-flex; align-items: center; gap: 9px; }
+.gauge__t { width: 70px; height: 11px; border: var(--edge); background: var(--sheet); }
+.gauge__f { display: block; height: 100%; background: var(--olive); }
+.gauge__f.hot { background: var(--clay); }
+.gauge b { font-family: var(--mono); font-size: 12px; font-weight: 700; }
+
+/* --- split ---------------------------------------------------------------- */
+
+.two { display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start; }
+
+.line { padding: 4px 0; }
+.line__r { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 10px 18px; border-bottom: 1.5px solid #E4DCCC; }
+.line__r:last-child { border-bottom: none; }
+.line__d { font-family: var(--mono); font-size: 10.5px; color: var(--faint); line-height: 1.55; }
+.line__c b { font-size: 14.5px; font-weight: 700; letter-spacing: -0.02em; display: block; }
+.line__c span { font-size: 13px; color: var(--soft); }
+
+.meters2 { padding: 14px 18px; }
+.meters2 > div { margin-bottom: 13px; }
+.meters2 .t { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 5px; font-weight: 600; letter-spacing: -0.02em; }
+.meters2 .t em { font-style: normal; font-family: var(--mono); font-size: 11px; font-weight: 400; color: var(--soft); }
+.meters2 .g { height: 9px; border: var(--edge); background: var(--sheet); }
+.meters2 .g i { display: block; height: 100%; background: var(--sky); }
+.meters2 .g i.a { background: var(--olive); }
+.meters2 .g i.b { background: var(--clay); }
+
+.facts2 { padding: 6px 18px 16px; }
+.facts2 > div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1.5px solid #E4DCCC; font-size: 13.5px; }
+.facts2 > div:last-child { border-bottom: none; }
+.facts2 b { font-family: var(--mono); font-size: 12.5px; }
+
+/* --- detail --------------------------------------------------------------- */
+
+.open2 { display: grid; grid-template-columns: 1fr 1fr; }
+.open2 > div { padding: 18px; }
+.open2 > div:first-child { border-right: var(--edge); }
+.open2 h3 { font-size: 21px; letter-spacing: -0.035em; margin-bottom: 3px; }
+.open2 .mt { font-family: var(--mono); font-size: 11px; color: var(--soft); margin-bottom: 13px; }
+.open2 p { font-size: 14px; color: var(--soft); }
+.open2 .out { border: var(--edge); }
+.open2 .out div { display: grid; grid-template-columns: 78px 1fr; gap: 12px; padding: 9px 12px; border-bottom: var(--edge); font-size: 13px; }
+.open2 .out div:last-child { border-bottom: none; }
+.open2 .out b { font-family: var(--mono); font-weight: 700; color: var(--clay); }
+.open2 .out span { color: var(--soft); }
+
+@media (max-width: 1180px) {
+  .score { grid-template-columns: 1fr 1fr; }
+  .two { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  .desk { grid-template-columns: 1fr; }
+  .side { position: static; height: auto; border-right: none; border-bottom: var(--edge); }
+  .floor { padding: 0 16px 40px; }
+  .score { grid-template-columns: 1fr; }
+  .open2 { grid-template-columns: 1fr; }
+  .open2 > div:first-child { border-right: none; border-bottom: var(--edge); }
+  .hide-sm { display: none; }
+}

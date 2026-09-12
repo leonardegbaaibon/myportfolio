@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonard Egbaaibon, mobile and frontend engineer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="logo" href="#" style="text-decoration:none">LEONARD E.</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#how">How I work</a>
+      <a href="#said">References</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="../../public/Image/LeonardEgbaaibon2.pdf">CV</a>
+      <a class="hire" href="https://calendly.com/legbaaibon">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="band band--cream" style="padding-top:52px">
+  <div class="hold">
+    <div class="hero">
+      <div>
+        <div class="open"><i></i> One seat open from October 2026</div>
+        <h1 class="xl">
+          I build the apps people use to <span class="mark">move money</span>
+          and <span class="mark mark--sky">move themselves</span>, <span class="serif">and I stay until they stop breaking.</span>
+        </h1>
+        <p class="lead">
+          Four years of React Native, Kotlin and TypeScript across fintech, mobility and telematics.
+          Ten apps in production, six through Apple review, eight through Play. Most of the work I am
+          proud of happened after launch, not before it.
+        </p>
+        <div class="btns">
+          <a class="btn btn--clay" href="https://calendly.com/legbaaibon">Book 30 minutes ↗</a>
+          <a class="btn" href="#work">See the work</a>
+          <a class="btn" href="../../public/Image/LeonardEgbaaibon2.pdf">CV, PDF ↓</a>
+        </div>
+      </div>
+
+      <div class="tiles">
+        <div class="tile">
+          <div class="tile__n">99.2%</div>
+          <div class="tile__k">Crash-free sessions</div>
+          <div class="tile__s">Swiift, held through the first production release on both stores</div>
+        </div>
+        <div class="tile">
+          <div class="tile__n">$70K</div>
+          <div class="tile__k">Settled monthly</div>
+          <div class="tile__s">BlockEx, four currencies, 99.9% uptime</div>
+        </div>
+        <div class="tile">
+          <div class="tile__n">−42%</div>
+          <div class="tile__k">Battery drain</div>
+          <div class="tile__s">Kabu, after the geolocation rewrite</div>
+        </div>
+        <div class="tile">
+          <div class="tile__n">−60%</div>
+          <div class="tile__k">False alerts</div>
+          <div class="tile__s">Gumshoe, acoustic DSP retune on Kotlin</div>
+        </div>
+        <div class="tile">
+          <div class="tile__n">14</div>
+          <div class="tile__k">Builds shipped</div>
+          <div class="tile__s">10 mobile, 3 web, 1 native Android</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker__in">
+    <span><b>Now:</b> Kabu in store review</span><span>·</span>
+    <span><b>Now:</b> Buildsure in development at Baye Capital</span><span>·</span>
+    <span>React Native</span><span>Kotlin</span><span>TypeScript</span><span>Supabase Edge</span><span>Stripe</span><span>Google Maps</span><span>Jetpack Compose</span><span>Swift</span>
+    <span><b>Now:</b> Kabu in store review</span><span>·</span>
+    <span><b>Now:</b> Buildsure in development at Baye Capital</span><span>·</span>
+    <span>React Native</span><span>Kotlin</span><span>TypeScript</span><span>Supabase Edge</span><span>Stripe</span><span>Google Maps</span><span>Jetpack Compose</span><span>Swift</span>
+  </div>
+</div>
+
+<!-- ================= WORK ================= -->
+<section class="band band--cream" id="work">
+  <div class="hold">
+    <div class="mkr"><b>01</b><span>Selected work, 6 of 14</span></div>
+    <h2 class="lg">Six builds, and the <span class="serif">number each one moved.</span></h2>
+    <p class="lead" style="margin-bottom:34px">
+      Every project here went to production or store review. Where the source is under NDA I have said
+      so and given the measurement instead.
+    </p>
+
+    <div class="works">
+
+      <article class="work work--wide">
+        <img class="work__img" src="../../public/Image/project/swiift-card.png" alt="Swiift virtual card screen">
+        <div class="work__b">
+          <div class="work__t"><h3 class="md"><a href="https://www.getswiift.app">Swiift</a></h3><span class="flag flag--live">LIVE, BOTH STORES</span></div>
+          <div class="work__meta">Lead Mobile Developer · Swiift Fintech · Jun 2025 to Jan 2026</div>
+          <p>
+            An everyday crypto wallet where you never see the word blockchain. Buy, spend, save, send,
+            pay bills, generate a virtual debit card. I led the build end to end and ran both store
+            submissions, including two rejections.
+          </p>
+          <p>
+            <b>The hard part was never cryptography, it was network quality.</b> On Lagos mobile data a
+            request can hang for nine seconds and then succeed, so every write is idempotent and the
+            wallet reconciles on resume. The naive version double-spends.
+          </p>
+          <div class="tags"><span>React Native</span><span>Expo</span><span>Redux Toolkit</span><span>TypeScript</span><span>Stripe</span><span>Crypto rails</span></div>
+          <div class="hits">
+            <div><b>99.2%</b><span>crash-free sessions</span></div>
+            <div><b>+25%</b><span>active retention</span></div>
+            <div><b>&lt;2s</b><span>median confirmation</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work work--third">
+        <div class="work__b">
+          <div class="work__t"><h3 class="md"><a href="https://incenvia.com">Kabu</a></h3><span class="flag flag--rev">IN REVIEW</span></div>
+          <div class="work__meta">Lead Mobile Engineer · Incenvia · 2026</div>
+          <p>
+            Chauffeur and car rental marketplace for Lagos. I own the rider side: destination entry,
+            vehicle tier, driver hire, live trip view.
+          </p>
+          <p>
+            <b>Continuous high-accuracy GPS on two devices is how you get uninstalled.</b> Adaptive
+            sampling tied to trip state fixed it.
+          </p>
+          <div class="tags"><span>React Native</span><span>TypeScript</span><span>Maps</span><span>SQLite</span></div>
+          <div class="hits">
+            <div><b>−42%</b><span>battery drain</span></div>
+            <div><b>&lt;1s</b><span>dispatch stream</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work work--half">
+        <img class="work__img" src="../../public/Image/blockex.png" alt="BlockEx exchange interface">
+        <div class="work__b">
+          <div class="work__t"><h3 class="md"><a href="https://blockex.trade">BlockEx</a></h3><span class="flag flag--live">LIVE, OPEN SOURCE</span></div>
+          <div class="work__meta">Full-Stack Engineer · Blockspace Technologies · 2024 to 2025</div>
+          <p>
+            B2B exchange and remittance desk. I built the trading frontend and the whole serverless
+            backend on Supabase Edge Functions, so the order book and settlement never depend on a
+            long-lived server holding state.
+          </p>
+          <p>
+            <b>The first WebSocket layer leaked a subscription on every symbol switch.</b> Three tabs
+            open for an afternoon and the browser was gone. The rewrite uses one multiplexed connection
+            with reference-counted topics.
+          </p>
+          <div class="tags"><span>React</span><span>Next.js</span><span>Supabase</span><span>Edge Functions</span><span>WebSocket</span></div>
+          <div class="hits">
+            <div><b>$70K+</b><span>settled monthly</span></div>
+            <div><b>99.9%</b><span>uptime</span></div>
+            <div><b>−68%</b><span>client memory</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work work--half">
+        <img class="work__img" src="../../public/Image/gumshoe.png" alt="Gumshoe telematics app">
+        <div class="work__b">
+          <div class="work__t"><h3 class="md"><a href="https://www.tsaron.com">Gumshoe</a></h3><span class="flag flag--live">LIVE, UNDER NDA</span></div>
+          <div class="work__meta">Mobile &amp; Systems Engineer · Tsaron Technologies · 2023 to 2024</div>
+          <p>
+            Native Kotlin insurtech telematics. It listens for the acoustic signature of a driver using a
+            phone at the wheel, fuses that with motion sensors, and builds a tamper-evident packet for
+            accident reconstruction and automated subrogation claims.
+          </p>
+          <p>
+            <b>Most of the work was narrowing the false-positive band:</b> a passenger's phone, a radio
+            advert, a pothole at the wrong moment. All while keeping a DSP pipeline alive on a mid-range
+            Android without cooking the battery.
+          </p>
+          <div class="tags"><span>Kotlin</span><span>Android native</span><span>DSP</span><span>Sensor fusion</span><span>FNOL</span></div>
+          <div class="hits">
+            <div><b>−60%</b><span>false alerts</span></div>
+            <div><b>Auto</b><span>claims from telemetry</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work work--third">
+        <div class="work__b">
+          <div class="work__t"><h3 class="md"><a href="https://nididrive.com">NidiDrive</a></h3><span class="flag flag--live">LIVE</span></div>
+          <div class="work__meta">Mobile Developer · 2025</div>
+          <p>
+            Brought in to fix a slow, crashing dispatch app. Map clustering, a state refactor, and moving
+            location subscriptions out of the component tree did most of it.
+          </p>
+          <div class="tags"><span>React Native</span><span>Firebase</span><span>Maps</span></div>
+          <div class="hits">
+            <div><b>−40%</b><span>crash rate</span></div>
+            <div><b>+20%</b><span>daily actives</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work work--third">
+        <div class="work__b">
+          <div class="work__t"><h3 class="md"><a href="https://www.glamorgram.com">Glamorgram</a></h3><span class="flag flag--live">LIVE</span></div>
+          <div class="work__meta">Mobile Engineer · 2026</div>
+          <p>
+            Scheduling and payments for salon owners. Beauty services have variable durations, so slot
+            conflict resolution cannot sit on a fixed grid. Stripe collects at booking, which is what
+            actually reduced no-shows.
+          </p>
+          <div class="tags"><span>React Native</span><span>Expo</span><span>Stripe</span></div>
+          <div class="hits">
+            <div><b>iOS + Android</b><span>one codebase</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work work--third">
+        <div class="work__b">
+          <div class="work__t"><h3 class="md"><a href="https://itspaydai.com">PayDai</a></h3><span class="flag flag--done">COMPLETED</span></div>
+          <div class="work__meta">Frontend Engineer · ItsPaydai · 2023</div>
+          <p>
+            Multi-tier commission reconciliation with automated Stripe and PayPal batch payouts. Reps
+            watch their money land on a live channel instead of emailing finance to ask.
+          </p>
+          <div class="tags"><span>React</span><span>Stripe</span><span>PayPal</span><span>WebSockets</span></div>
+          <div class="hits">
+            <div><b>−75%</b><span>processing time</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="btns"><a class="btn btn--olive" href="dashboard.html">Open the dashboard, all 14 builds →</a></div>
+  </div>
+</section>
+
+<!-- ================= HOW ================= -->
+<section class="band band--butter" id="how">
+  <div class="hold">
+    <div class="mkr"><b>02</b><span>How I work</span></div>
+    <h2 class="lg" style="max-width:20ch">Four habits that produced <span class="serif">most of those numbers.</span></h2>
+    <p class="lead" style="color:#4a4136;margin-bottom:34px">Not a philosophy. Things I actually do, in roughly this order.</p>
+
+    <div class="steps">
+      <div>
+        <div class="steps__n">01</div>
+        <h4>Start on the slow phone</h4>
+        <p>A mid-range Android stays in the loop from day one. Simulators lie about battery, thermal throttling and network. The Kabu and NidiDrive results both came from the cheap device.</p>
+      </div>
+      <div>
+        <div class="steps__n">02</div>
+        <h4>Assume the connection drops</h4>
+        <p>Idempotent writes, a reconciliation pass on resume, and never letting a spinner be the only state a screen can hold. That is the normal case where these apps ship, not an edge case.</p>
+      </div>
+      <div>
+        <div class="steps__n">03</div>
+        <h4>Measure, then optimise</h4>
+        <p>Sentry, crash grouping and a few funnel events go in first. The 68% memory reduction came out of a heap snapshot. Without a number, performance work is decoration.</p>
+      </div>
+      <div>
+        <div class="steps__n">04</div>
+        <h4>Leave a runbook</h4>
+        <p>Contracts end. Mine end with an architecture note, the deployment runbook, and the next three things I would do in priority order. Talstrike V2 was scoped that way before handover.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REFERENCES ================= -->
+<section class="band band--cream" id="said">
+  <div class="hold">
+    <div class="mkr"><b>03</b><span>References, named and linked</span></div>
+    <h2 class="lg" style="margin-bottom:32px">People I have <span class="mark mark--blush">shipped alongside.</span></h2>
+
+    <div class="says">
+      <figure class="say">
+        <blockquote>“Leonard is a mobile and frontend maestro who effortlessly transforms ambitious product specs into fast, resilient and scalable applications. His attention to UX micro-details and architecture is world-class.”</blockquote>
+        <figcaption><b>Elvis Udoh</b>Engineering Lead<br><a href="https://www.linkedin.com/in/elvis-udoh/">linkedin.com/in/elvis-udoh</a></figcaption>
+      </figure>
+      <figure class="say">
+        <blockquote>“A creative powerhouse across both web and mobile engineering. Leonard consistently delivers solutions blending sleek aesthetics with robust backend integration. His fintech and blockchain builds have been stellar.”</blockquote>
+        <figcaption><b>Opeyemi Abiodun</b>Senior Fullstack Engineer<br><a href="https://www.linkedin.com/in/opeyemi-abiodun-aa327920a/">linkedin.com/in/opeyemi-abiodun</a></figcaption>
+      </figure>
+      <figure class="say">
+        <blockquote>“Leonard's expertise in React Native, Kotlin and modern UI engineering is top-tier. He has an exceptional ability to tackle complex performance problems while keeping a laser focus on user delight.”</blockquote>
+        <figcaption><b>Oluwafemi Ogunnote</b>Mobile Solutions Architect<br><a href="https://www.linkedin.com/in/oluwafemi-ogunnote-76207a151/">linkedin.com/in/oluwafemi-ogunnote</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="band band--olive" id="contact" style="border-bottom:none">
+  <div class="hold">
+    <div class="mkr"><b>04</b><span>Contact</span></div>
+    <div class="reach">
+      <div>
+        <h2 class="lg">Got a build that needs <span class="serif" style="color:var(--butter)">finishing?</span></h2>
+        <p class="lead" style="margin-bottom:20px">
+          Mobile builds, performance rescues, payments integrations. You get a reply within a working day
+          with either a plan or an honest pointer to someone better suited.
+        </p>
+        <p style="color:rgba(255,251,243,.82);font-size:15px;max-width:52ch">
+          I also run React Native architecture and Figma-to-code sessions, using production code from the
+          builds above rather than toy examples. Intermediate to advanced, one to one or small group.
+        </p>
+      </div>
+      <div class="chan">
+        <a href="mailto:legbaaibon@gmail.com">legbaaibon@gmail.com <em>Email</em></a>
+        <a href="https://calendly.com/legbaaibon">Book a call <em>Calendly, 30 min</em></a>
+        <a href="https://github.com/leonardegbaaibon">GitHub <em>@leonardegbaaibon</em></a>
+        <a href="https://www.linkedin.com/in/leonard-egbaaibon/">LinkedIn <em>Full history</em></a>
+        <a href="https://www.youtube.com/@yor-dev">YouTube <em>@yor-dev</em></a>
+      </div>
+    </div>
+
+    <div class="end" style="color:rgba(255,251,243,.6)">
+      <span>Written and built by Leonard Egbaaibon, Lagos. Set in Bricolage Grotesque, Fraunces and JetBrains Mono.</span>
+      <span>Variant 04, Workshop</span>
+    </div>
+  </div>
+</section>
+
+<nav class="jump">
+  <a href="index.html" aria-current="page">Landing</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="../index.html">Variants</a>
+</nav>
+
+</body>
+</html>
