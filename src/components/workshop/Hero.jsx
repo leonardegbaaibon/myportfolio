@@ -55,7 +55,7 @@ const Hero = () => (
                 Book 30 minutes ↗
               </a>
               <a className="btn" href="#work">See the work</a>
-              <a className="btn" href={personalInfo.resumeUrl}>CV, PDF ↓</a>
+              <a className="btn" href={personalInfo.resumeUrl} target="_blank" rel="noreferrer">CV, PDF ↓</a>
             </div>
           </div>
 

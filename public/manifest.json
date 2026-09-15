@@ -1,0 +1,21 @@
+{
+  "short_name": "Leonard E.",
+  "name": "Leonard Egbaaibon Portfolio",
+  "description": "Lead Mobile & Frontend Engineer specializing in React Native, Kotlin, and TypeScript.",
+  "icons": [
+    {
+      "src": "/Image/Developer.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/Image/Developer.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1a1917",
+  "theme_color": "#1a1917",
+  "display": "standalone"
+}

@@ -29,6 +29,8 @@ const TopNav = () => (
         ))}
         <a
           href={personalInfo.resumeUrl}
+          target="_blank"
+          rel="noreferrer"
           className="border-2 border-transparent px-[11px] py-1.5 text-[13.5px] font-semibold tracking-[-0.01em] no-underline hover:border-ink hover:bg-sheet"
         >
           CV

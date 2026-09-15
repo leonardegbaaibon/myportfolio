@@ -36,8 +36,14 @@ const App = () => {
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  // Switching views should start at the top, not keep the previous scroll.
+  // Switching views should start at the top and update title for SEO & UX.
   useEffect(() => {
+    if (view === 'dashboard') {
+      document.title = 'Build Index & Telemetry Dashboard — Leonard Egbaaibon';
+    } else {
+      document.title = 'Leonard Egbaaibon — Lead Mobile & Frontend Engineer | React Native, Kotlin, TypeScript';
+    }
+
     if (!window.location.hash.includes('#/')) return;
     window.scrollTo(0, 0);
   }, [view]);

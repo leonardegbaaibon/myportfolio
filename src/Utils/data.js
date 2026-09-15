@@ -9,7 +9,7 @@ export const personalInfo = {
   livePortfolio: "https://myportfolio-one-dusky.vercel.app",
   youtube: "https://www.youtube.com/@yor-dev",
   scheduling: "https://calendly.com/legbaaibon",
-  resumeUrl: "/Image/LeonardEgbaaibon2.pdf",
+  resumeUrl: "/Image/Leonard_Egbaaibon_Resume.pdf",
 };
 
 export const heroStats = [
