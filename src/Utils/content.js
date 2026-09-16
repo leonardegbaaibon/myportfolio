@@ -55,34 +55,111 @@ export const tickerItems = [
 ];
 
 /**
- * The six that lead, keyed to `projectsData` ids.
- * `span` drives the asymmetric grid; `body` is the written framing;
- * `hits` are the measured outcomes shown along the bottom of the block.
+ * The seven builds that lead, keyed to `projectsData` ids.
+ * Glamorgram leads, followed by the live store builds (NidiDrive, Talstrike, Swiftpoint, BlockEx),
+ * and the review/development builds (Kabu, Buildsure).
  */
 export const featuredWork = [
   {
-    id: 'swiift',
-    name: 'Swiift',
+    id: 'glamorgram',
+    name: 'Glamorgram',
     span: 'wide',
     showImage: true,
     stage: { label: 'LIVE, BOTH STORES', tone: 'live' },
-    meta: 'Lead Mobile Developer · Swiift Fintech · Jun 2025 to Jan 2026',
+    meta: 'Lead Mobile Engineer · Glamorgram · 2026',
     body: [
-      'An everyday crypto wallet where you never see the word blockchain. Buy, spend, save, send, pay bills, generate a virtual debit card. I led the build end to end and ran both store submissions, including two rejections.',
-      'The hard part was never cryptography, it was network quality. On Lagos mobile data a request can hang for nine seconds and then succeed, so every write is idempotent and the wallet reconciles on resume. The naive version double-spends.',
+      'All-in-one beauty salon scheduling, appointment booking, and in-app checkout experience for salon owners and clients across iOS and Android.',
+      'Beauty services have variable durations, so slot conflict resolution cannot sit on a fixed grid. Stripe collects upfront at booking, which eliminated client no-shows and streamlined daily revenue admin.',
     ],
-    emphasis: 'The hard part was never cryptography, it was network quality.',
-    tags: ['React Native', 'Expo', 'Redux Toolkit', 'TypeScript', 'Stripe', 'Crypto rails'],
+    emphasis: 'Stripe collects upfront at booking, which eliminated client no-shows',
+    tags: ['React Native', 'Expo', 'TypeScript', 'Redux', 'Stripe API', 'Mobile Payments'],
     hits: [
-      { v: '99.2%', k: 'crash-free sessions' },
-      { v: '+25%',  k: 'active retention' },
-      { v: '<2s',   k: 'median confirmation' },
+      { v: '100%', k: 'booking uptime' },
+      { v: '<30s', k: 'checkout flow' },
+      { v: 'iOS + Android', k: 'one codebase' },
+    ],
+  },
+  {
+    id: 'nididrive',
+    name: 'NidiDrive',
+    span: 'third',
+    showImage: true,
+    stage: { label: 'LIVE, BOTH STORES', tone: 'live' },
+    meta: 'Mobile Developer · NidiDrive · 2025',
+    body: [
+      'On-demand chauffeur dispatch, emergency transit, and mobility logistics application featuring sub-second coordinate streaming, background geofencing, and driver routing.',
+      'Brought in to fix a slow, crashing dispatch app. Map clustering, a state refactor, and moving location subscriptions out of the component tree eliminated crash regressions and cut load times by 35%.',
+    ],
+    emphasis: 'moving location subscriptions out of the component tree eliminated crash regressions',
+    tags: ['React Native', 'TypeScript', 'Firebase', 'Google Maps', 'Push Notifications'],
+    hits: [
+      { v: '−40%', k: 'crash rate' },
+      { v: '+20%', k: 'daily actives' },
+      { v: '−35%', k: 'app load time' },
+    ],
+  },
+  {
+    id: 'talstrike',
+    name: 'Talstrike',
+    span: 'half',
+    showImage: true,
+    stage: { label: 'LIVE, BOTH STORES', tone: 'live' },
+    meta: 'Mobile Solutions Engineer · Talstrike · 2026',
+    body: [
+      'Global sports networking and athlete talent discovery application featuring low-latency multimedia video reels, direct scouting pipelines, and real-time news feeds.',
+      'Resolved critical stability bottlenecks in the production mobile app, optimizing low-latency video feed playback and athlete discovery. Scoped modular architecture for Talstrike V2 with dedicated streaming pipelines.',
+    ],
+    emphasis: 'optimizing low-latency video feed playback and athlete discovery.',
+    tags: ['React Native', 'TypeScript', 'Redux', 'Video Streaming', 'Sports Telemetry'],
+    hits: [
+      { v: '60fps', k: 'video reel playback' },
+      { v: '<100ms', k: 'scout latency' },
+      { v: 'V2', k: 'architecture scoped' },
+    ],
+  },
+  {
+    id: 'swiftpoint',
+    name: 'Swiftpoint',
+    span: 'half',
+    showImage: true,
+    stage: { label: 'LIVE, BOTH STORES', tone: 'live' },
+    meta: 'Lead Mobile Developer · Swiftpoint · 2025',
+    body: [
+      'African payment and financial operations platform offering instant bill payments, airtime recharge, peer-to-peer transfers, and multi-gateway merchant checkout.',
+      'Engineered multi-currency wallet and airtime/bill modules achieving 99.2% crash-free stability with automated settlement reconciliation that cut manual audit overhead in half.',
+    ],
+    emphasis: 'automated settlement reconciliation that cut manual audit overhead in half.',
+    tags: ['React Native', 'Expo', 'Redux Toolkit', 'TypeScript', 'Kotlin', 'Swift'],
+    hits: [
+      { v: '99.2%', k: 'crash-free stability' },
+      { v: '<2s',   k: 'transaction speed' },
+      { v: '−50%',  k: 'audit overhead' },
+    ],
+  },
+  {
+    id: 'blockex',
+    name: 'BlockEx',
+    span: 'third',
+    showImage: true,
+    stage: { label: 'LIVE, OPEN SOURCE', tone: 'live' },
+    meta: 'Full-Stack Engineer · Blockspace Technologies · 2024 to 2025',
+    body: [
+      'B2B exchange and remittance desk. I built the trading frontend and the whole serverless backend on Supabase Edge Functions, processing $70k+ monthly settlement across 4+ currencies.',
+      'The first WebSocket layer leaked a subscription on every symbol switch. The rewrite uses one multiplexed connection with reference-counted topics.',
+    ],
+    emphasis: 'The first WebSocket layer leaked a subscription on every symbol switch.',
+    tags: ['React', 'Next.js', 'Supabase', 'Edge Functions', 'WebSocket'],
+    hits: [
+      { v: '$70K+', k: 'settled monthly' },
+      { v: '99.9%', k: 'uptime' },
+      { v: '−68%',  k: 'client memory' },
     ],
   },
   {
     id: 'kabu',
     name: 'Kabu',
     span: 'third',
+    showImage: true,
     stage: { label: 'IN REVIEW', tone: 'review' },
     meta: 'Lead Mobile Engineer · Incenvia · 2026',
     body: [
@@ -97,80 +174,83 @@ export const featuredWork = [
     ],
   },
   {
+    id: 'swiift',
+    name: 'Swiift',
+    span: 'third',
+    showImage: true,
+    stage: { label: 'LIVE, BOTH STORES', tone: 'live' },
+    meta: 'Lead Mobile Developer · Swiift Fintech · 2025 to 2026',
+    body: [
+      'Everyday crypto wallet companion enabling instant virtual card issuance, bill payments, peer-to-peer transfers, and multi-asset conversions.',
+      'On Lagos mobile data a request can hang for nine seconds and then succeed, so every write is idempotent and the wallet reconciles on resume.',
+    ],
+    emphasis: 'every write is idempotent and the wallet reconciles on resume.',
+    tags: ['React Native', 'Expo', 'Redux Toolkit', 'TypeScript', 'Stripe', 'Crypto rails'],
+    hits: [
+      { v: '99.2%', k: 'crash-free sessions' },
+      { v: '+25%',  k: 'active retention' },
+      { v: '<2s',   k: 'median confirmation' },
+    ],
+  },
+];
+
+/**
+ * Web applications and platforms shipped with direct landing page links.
+ */
+export const webPlatforms = [
+  {
     id: 'blockex',
-    name: 'BlockEx',
-    span: 'half',
-    showImage: true,
-    stage: { label: 'LIVE, OPEN SOURCE', tone: 'live' },
+    name: 'BlockEx Exchange',
+    category: 'Decentralized Exchange',
+    url: 'https://blockex.trade',
+    displayUrl: 'blockex.trade',
+    stage: { label: 'LIVE PLATFORM', tone: 'live' },
     meta: 'Full-Stack Engineer · Blockspace Technologies · 2024 to 2025',
-    body: [
-      'B2B exchange and remittance desk. I built the trading frontend and the whole serverless backend on Supabase Edge Functions, so the order book and settlement never depend on a long-lived server holding state.',
-      'The first WebSocket layer leaked a subscription on every symbol switch. Three tabs open for an afternoon and the browser was gone. The rewrite uses one multiplexed connection with reference-counted topics.',
-    ],
-    emphasis: 'The first WebSocket layer leaked a subscription on every symbol switch.',
-    tags: ['React', 'Next.js', 'Supabase', 'Edge Functions', 'WebSocket'],
+    image: '/Image/blockex.png',
+    logo: '/Image/company/blockex-logo.png',
+    desc: 'B2B cryptocurrency exchange and remittance platform settling $70k+ monthly across 4+ currencies with 99.9% uptime and serverless Supabase Edge execution.',
+    tags: ['React', 'Next.js', 'Supabase Edge', 'WebSockets', 'Tailwind CSS'],
     hits: [
-      { v: '$70K+', k: 'settled monthly' },
+      { v: '$70K+', k: 'monthly settled' },
       { v: '99.9%', k: 'uptime' },
-      { v: '−68%',  k: 'client memory' },
+      { v: '−68%',  k: 'memory leak rewrite' },
     ],
   },
   {
-    id: 'gumshoe',
-    name: 'Gumshoe',
-    span: 'half',
-    showImage: true,
-    stage: { label: 'LIVE, UNDER NDA', tone: 'live' },
-    meta: 'Mobile & Systems Engineer · Tsaron Technologies · 2023 to 2024',
-    body: [
-      'Native Kotlin insurtech telematics. It listens for the acoustic signature of a driver using a phone at the wheel, fuses that with motion sensors, and builds a tamper-evident packet for accident reconstruction and automated subrogation claims.',
-      'Most of the work was narrowing the false-positive band: a passenger’s phone, a radio advert, a pothole at the wrong moment. All while keeping a DSP pipeline alive on a mid-range Android without cooking the battery.',
-    ],
-    emphasis: 'Most of the work was narrowing the false-positive band:',
-    tags: ['Kotlin', 'Android native', 'DSP', 'Sensor fusion', 'FNOL'],
+    id: 'cryptolens',
+    name: 'CryptoLens AI Suite',
+    category: 'Market Intelligence',
+    url: 'https://cryptolens.blockex.trade/',
+    displayUrl: 'cryptolens.blockex.trade',
+    stage: { label: 'LIVE WEB APP', tone: 'live' },
+    meta: 'Frontend Developer · Blockspace Technologies · 2025',
+    image: '/Image/crytolensBlockex.png',
+    logo: '/Image/company/blockex-logo.png',
+    desc: 'AI-assisted cryptocurrency intelligence suite with live WebSocket price feeds, predictive market trend sentiment charts, and real-time portfolio risk scoring.',
+    tags: ['React', 'Supabase', 'Chart.js', 'AI Sentiment', 'WebSockets'],
     hits: [
-      { v: '−60%', k: 'false alerts' },
-      { v: 'Auto', k: 'claims from telemetry' },
+      { v: 'Real-time', k: 'price ticks' },
+      { v: 'AI',        k: 'sentiment forecasts' },
+      { v: 'Instant',   k: 'threshold alerts' },
     ],
-  },
-  {
-    id: 'nididrive',
-    name: 'NidiDrive',
-    span: 'third',
-    stage: { label: 'LIVE', tone: 'live' },
-    meta: 'Mobile Developer · 2025',
-    body: [
-      'Brought in to fix a slow, crashing dispatch app. Map clustering, a state refactor, and moving location subscriptions out of the component tree did most of it.',
-    ],
-    tags: ['React Native', 'Firebase', 'Maps'],
-    hits: [
-      { v: '−40%', k: 'crash rate' },
-      { v: '+20%', k: 'daily actives' },
-    ],
-  },
-  {
-    id: 'glamorgram',
-    name: 'Glamorgram',
-    span: 'third',
-    stage: { label: 'LIVE', tone: 'live' },
-    meta: 'Mobile Engineer · 2026',
-    body: [
-      'Scheduling and payments for salon owners. Beauty services have variable durations, so slot conflict resolution cannot sit on a fixed grid. Stripe collects at booking, which is what actually reduced no-shows.',
-    ],
-    tags: ['React Native', 'Expo', 'Stripe'],
-    hits: [{ v: 'iOS + Android', k: 'one codebase' }],
   },
   {
     id: 'itspaydai',
-    name: 'PayDai',
-    span: 'third',
-    stage: { label: 'COMPLETED', tone: 'done' },
-    meta: 'Frontend Engineer · ItsPaydai · 2023',
-    body: [
-      'Multi-tier commission reconciliation with automated Stripe and PayPal batch payouts. Reps watch their money land on a live channel instead of emailing finance to ask.',
+    name: 'PayDai Commission Engine',
+    category: 'Fintech & Payout Rails',
+    url: 'https://itspaydai.com',
+    displayUrl: 'itspaydai.com',
+    stage: { label: 'LIVE WEB APP', tone: 'live' },
+    meta: 'Frontend Engineer · ItsPaydai · 2024',
+    image: '/Image/itspaydai.png',
+    logo: '/Image/company/itspaydai-logo.png',
+    desc: 'Automated sales commission management platform with instant Stripe & PayPal batch disbursements, slashing manual accounting time by 75%.',
+    tags: ['React', 'TypeScript', 'Redux', 'Stripe API', 'PayPal API'],
+    hits: [
+      { v: '−75%', k: 'payout execution' },
+      { v: 'Batch', k: 'auto disbursements' },
+      { v: 'Live',  k: 'status webhooks' },
     ],
-    tags: ['React', 'Stripe', 'PayPal', 'WebSockets'],
-    hits: [{ v: '−75%', k: 'processing time' }],
   },
 ];
 
@@ -222,7 +302,7 @@ export const boardMeta = {
 };
 
 export const scoreboard = [
-  { value: '99.2%', label: 'Best crash-free rate',  note: 'Swiift, held through the first production release on both stores', tone: 'clay', wide: true },
+  { value: '99.2%', label: 'Best crash-free rate',  note: 'Swiftpoint & Glamorgram, held through production releases', tone: 'clay', wide: true },
   { value: '$70K',  label: 'Settled monthly',       note: 'BlockEx, four currencies' },
   { value: '14',    label: 'Builds on the board',   note: '11 mobile, 3 web. One native Kotlin.', tone: 'sky' },
   { value: '4.6y',  label: 'In production code',    note: 'Feb 2022 to Sep 2026', tone: 'butter' },

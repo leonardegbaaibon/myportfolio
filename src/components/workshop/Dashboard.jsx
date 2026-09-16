@@ -139,8 +139,19 @@ const BuildTable = ({ rows }) => (
               {String(i + 1).padStart(2, '0')}
             </td>
             <td className="border-b-[1.5px] border-rule px-4 py-2.5">
-              <span className="whitespace-nowrap font-bold tracking-[-0.025em]">{shortNames[p.id] || p.name}</span>
-              <span className="block text-[12.5px] font-normal text-soft">{blurbs[p.id]}</span>
+              <div className="flex items-center gap-2.5">
+                {p.logo && (
+                  <img
+                    src={p.logo}
+                    alt={`${p.name} logo`}
+                    className="h-6 w-6 rounded border border-ink/20 bg-sheet p-0.5 object-contain shrink-0"
+                  />
+                )}
+                <div>
+                  <span className="whitespace-nowrap font-bold tracking-[-0.025em]">{shortNames[p.id] || p.name}</span>
+                  <span className="block text-[12.5px] font-normal text-soft">{blurbs[p.id]}</span>
+                </div>
+              </div>
             </td>
             <td className="hidden whitespace-nowrap border-b-[1.5px] border-rule px-4 py-2.5 font-mono text-[11px] text-soft lg:table-cell">
               {p.role}
@@ -179,7 +190,16 @@ const OpenedRow = ({ position }) => {
     <Slab title={`Row ${position}, opened`} aside={project.name}>
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="border-b-2 border-ink p-[18px] lg:border-b-0 lg:border-r-2">
-          <h3 className="mb-[3px] text-[21px] font-extrabold tracking-[-0.035em]">{project.name}</h3>
+          <div className="flex items-center gap-2.5 mb-1">
+            {project.logo && (
+              <img
+                src={project.logo}
+                alt={`${project.name} logo`}
+                className="h-7 w-7 rounded border border-ink/20 bg-sheet p-0.5 object-contain shrink-0"
+              />
+            )}
+            <h3 className="text-[21px] font-extrabold tracking-[-0.035em]">{project.name}</h3>
+          </div>
           <div className="mb-3 font-mono text-[11px] text-soft">{openedRow.meta}</div>
           {openedRow.body.map((t, i) => (
             <p key={i} className="mb-3 text-sm text-soft">{t}</p>
@@ -227,7 +247,16 @@ const EngagementHistory = () => (
             ))}
           </div>
           <div>
-            <b className="block text-[14.5px] font-bold tracking-[-0.02em]">{w.company}</b>
+            <div className="flex items-center gap-2">
+              {w.logo && (
+                <img
+                  src={w.logo}
+                  alt={`${w.company} logo`}
+                  className="h-4 w-4 rounded object-contain shrink-0"
+                />
+              )}
+              <b className="block text-[14.5px] font-bold tracking-[-0.02em]">{w.company}</b>
+            </div>
             <span className="text-[13px] text-soft">{w.position}. {w.description}</span>
           </div>
         </div>
